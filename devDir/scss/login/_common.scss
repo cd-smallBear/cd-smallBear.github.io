@@ -1,0 +1,125 @@
+.sticky{
+  height:100%;
+  body{
+    @include prefixer(display,flex);
+    @include flex-direction();
+    height:100%;
+  }
+  .g-main{
+    @include prefixer(flex,1);
+  }
+}
+//.g-head{
+//  @include box-shadow(0 0 0 1px $brand-danger);
+//  background:#fff;
+//}
+//.g-main{
+//  height:100%;
+//  text-align:center;
+//  &:after{
+//    content:"";
+//    display:inline-block;
+//    height:100%;
+//    vertical-align: middle;
+//  }
+//}
+.account-box{
+  h1{
+    display:inline-block;
+    padding:1rem 0;
+    @include border(bottom);
+    text-align:center;
+    font-size:28px;
+  }
+  //.extra{
+  //  display:inline-block;
+  //  width:100%;
+  //  padding-top:20px;
+  //  @include border(top);
+  //  font-size:14px;
+  //}
+}
+//注册 协议
+
+//.protocol-container{
+//  width: 800px;
+//  height: 600px;
+//  margin: 10px;
+//  overflow: auto;
+//  font-size: 14px;
+//
+//  h2{
+//    line-height:1.5;
+//    font-size:inherit;
+//  }
+//  ul{
+//    list-style:none;
+//    padding-left:0;
+//  }
+//}
+
+//.counter{
+//  counter-reset:counters;
+//  >li{
+//    padding-left:25px;
+//    counter-increment :counters;
+//    &:before{
+//      content: counter(counters)"、";
+//      margin-left:-24px;
+//      margin-right:-2px;
+//    }
+//    & + li{
+//      padding-top:20px;
+//    }
+//  }
+//}
+//$counterLength : 4;
+//@for $i from 2 through $counterLength{
+//  //.item{
+//  //  &~ .counter-level#{$i+1}{
+//  //    margin-left:25px * $i;
+//  //  }
+//  //}
+//  .counter-level#{$i}{
+//    counter-reset : counter#{$i};
+//    >li{
+//      counter-increment: counter#{$i};
+//      @if $i == 3 or $i ==4 {
+//        margin-left: -7px !important;
+//      }
+//      &:before{
+//        @if $i == 2{
+//          //width:22px;
+//          margin-left:-31px;
+//          //content:counter(counter#{$i+1},upper-alpha)"、" ;
+//          content:counter(counters) "-" counter(counter#{$i})"、" ;
+//        }@else if $i == 3{
+//          width:22px;
+//          margin-left:-22px;
+//          content:counter(counter#{$i},upper-alpha)"、" ;
+//        }@else if $i == 4{
+//          width:22px;
+//          margin-left:-22px;
+//          content:counter(counter#{$i},upper-roman)"、" ;
+//        }
+//      }
+//    }
+//  }
+//}
+//[class *= counter-level]{
+//  //padding-bottom:20px;
+//  li{
+//    padding-left:31px;
+//    margin-top:10px;
+//    //margin-left:25px ;
+//    &:before{
+//      display:inline-block;
+//      font-size:12px;
+//    }
+//    span{
+//      display:inline;
+//      margin-left:-4px;
+//    }
+//  }
+//}
+

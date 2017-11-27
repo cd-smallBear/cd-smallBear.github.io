@@ -1,0 +1,45 @@
+.breadcrumb {
+  padding: $breadcrumb-padding-y 0 ; //change @tag
+  // margin-bottom: $spacer-y; // change @tag
+  //margin: {                  // change @WangXiong
+  //  top: $breadcrumb-margin-y;
+  //  bottom: $breadcrumb-margin-y;
+  //}
+  list-style: none;
+  // background-color: $breadcrumb-bg;    // change @tag
+  // @include border-radius($border-radius);
+  @include clearfix;
+}
+
+.breadcrumb-item {
+  float: left;
+
+  // The separator between breadcrumbs (by default, a forward-slash: "/")
+  + .breadcrumb-item::before {
+    content: "#{$breadcrumb-divider}";
+    display: inline-block; // Suppress underlining of the separator in modern browsers
+    padding-right: $breadcrumb-item-padding - 0.2;
+    padding-left: $breadcrumb-item-padding;
+    vertical-align: 1px; //add @WangXiong
+    color: $breadcrumb-divider-color;
+    font-size:12px;           //add   @WangXiong
+    //font-weight: bold;
+  }
+
+  // IE9-11 hack to properly handle hyperlink underlines for breadcrumbs built
+  // without `<ul>`s. The `::before` pseudo-element generates an element
+  // *within* the .breadcrumb-item and thereby inherits the `text-decoration`.
+  //
+  // To trick IE into suppressing the underline, we give the pseudo-element an
+  // underline and then immediately remove it.
+  + .breadcrumb-item:hover::before {
+    text-decoration: underline;
+  }
+  + .breadcrumb-item:hover::before {
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $breadcrumb-active-color;
+  }
+}

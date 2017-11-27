@@ -1,0 +1,128 @@
+.g-head{
+  height:$head-nav-height;
+
+  .head-top-bar{
+    margin-left:$slideWidth;
+    padding-left:1rem;
+    &:after{
+      @include clearfix();
+    }
+  }
+
+  .site{
+    line-height: $head-nav-height;
+    font-size:1.25rem;
+  }
+
+  .quick-menu{
+    float:right;
+    line-height: $head-nav-height;
+    font-size:0.875rem;
+  }
+}
+
+.quick-menu{
+  .nav-item{
+    padding-left:1rem;
+    & > a{
+      color:#fff; // !important;
+    }
+  }
+
+  .dropdown{
+    min-width:10rem;
+    @include border(left ,$color:#fff);
+
+    &.open{
+      i{
+        @extend .iconfont-arrow-up;
+      }
+    }
+
+    a{
+      //display:block;
+      //white-space:nowrap;
+      //&:after{
+      //  content:"";
+      //
+      //}
+    }
+
+    .user{
+      display:inline-block;
+      width:100%;
+      line-height:normal;
+    }
+
+    .dropdown-caret{
+      float:right;
+      margin-top:(19 - 14px) / 2;
+      padding-left:1rem;
+    }
+  }
+  .dropdown-menu{
+    left:auto;
+    right:0;
+    line-height:normal;
+    margin-top:0;
+    @include border(top,$none:true);
+    @include border-radius(0 0 $border-radius $border-radius);
+    font-size:.875rem;
+  }
+
+  .shopping-cart {
+    //height: $head-nav-height - 20;
+    //line-height: $head-nav-height - 20;
+    //padding: 0 1.5rem;
+
+    .caret {
+      position:relative;
+      top:-8px;
+      display: inline-block;
+      line-height: 1.5rem;
+      vertical-align: middle;
+      @include border-circle(1.5rem);
+      transform : scale(.8);
+      text-align: center;
+      color: $brand-danger;
+
+      //border: 1px solid $brand-danger;
+      //margin-left: .5rem;
+      background:#fff;
+    }
+  }
+
+
+
+  .font{
+    font-size:18px;
+    vertical-align: -3px;
+  }
+}
+
+//.shopping-cart {
+  //display: inline-block;
+  //color: $brand-primary !important;
+  //background-color: #fff;
+//}
+
+
+
+.logo {
+    @extend %float-left;
+    position:relative;
+    width:$slideWidth;
+    height:100%;
+    @include box-shadow(inset 0 -1px 0 $box-border-color);
+    text-align:center;
+    background-color: #fff;
+
+    img{
+      max-height: $head-nav-height;
+    }
+
+    &:after{
+      //content: '';
+      @extend %children-middle;
+    }
+  }

@@ -1,0 +1,185 @@
+$modal-type-default:         $box-border-gray;
+
+
+@mixin renderModal( $name, $bg, $color: null ) {
+  .type-#{$name} {
+    .modal-header {
+      background-color: $bg;
+      @if $color {
+        color: $color;
+      }
+    }
+  }
+}
+
+@include renderModal( 'default', $modal-type-default );
+@include renderModal( 'success', $brand-success,#fff);
+@include renderModal( 'primary', $brand-primary, #fff);
+@include renderModal( 'danger', $brand-danger, #fff);
+@include renderModal( 'warning', $brand-warning, #fff);
+
+@include renderModal( 'error',  $brand-danger, #fff);
+
+
+.ui-spin {
+  &:before {
+    @extend %icon-font;
+
+    content: '\e900';
+    font-size: 19px;
+    display: inline-block;
+    animation: spin-rotate 1s infinite linear;
+    opacity: .5;
+    margin: {
+      left: -7px;
+      right: 10px;
+      top: -8px;
+      bottom: -6px;
+    }
+  }
+}
+
+// 文档modal的首行缩进二字符
+.word-modal {
+  p {
+    text-indent: 2rem;
+  }
+}
+
+
+.bootstrap-confirm {
+  .modal-dialog {
+    width: map-get($grid-breakpoints, sm);
+  }
+}
+
+.bootstrap-alert {
+  .modal-dialog {
+    //vertical-align: top;
+    width: 18.75rem;
+    //margin-top: 1.5rem !important;
+  }
+}
+
+.bs-dialog-form {
+  .modal-dialog {
+    width: map-get($grid-breakpoints, lg);
+//    width: 600px;
+//    min-height:400px;
+//    @media screen and (min-width:1920px){
+//      width:800px;
+//      height:500px;
+//    }
+  }
+  //.modal-body{
+  //  font-size:12px;
+  //}
+  // .media-left {
+  //   padding-top: $input-padding-y;
+  //
+  //   &:after {
+  //     content: '';
+  //     width: 6rem;
+  //     display: block;
+  //   }
+  // }
+  // .media-body {
+  //   width: auto;
+  // }
+}
+
+//dialog弹出窗口状态
+%modal{
+  .modal-body {
+    padding: 2rem 1rem;
+
+    &:before {
+      content:"";
+      @extend %ui-state;
+    }
+
+  }
+}
+$dialog-popup-state : ('warning':300px,'success': 300px,'error': 300px);
+@each $key,$value in $dialog-popup-state{
+  .modal-#{$key} {
+    //.modal-dialog {
+    //  width: $value;
+    //}
+    @extend %modal;
+    .modal-body {
+      &:before {
+        background-position:map-get($coordinate, $key);
+      }
+
+    }
+  }
+
+}
+
+@mixin typeModalWid( $wid ) {
+  .modal-w#{$wid} {
+    width: #{$wid}px;
+  }
+  .modal-wid#{$wid} {
+    .modal-dialog {
+      width: #{$wid}px;
+    }
+  }
+}
+
+@include typeModalWid(600);
+@include typeModalWid(800);
+@include typeModalWid(1000);
+// .modal-w800{width:800px;} //modal内容宽度
+// .modal-w1000{width:1000px;} //modal内容宽度
+//modal 中有 search
+.modal{
+  .search {
+    & + .search{
+      margin:2rem 0 1rem;
+    }
+  }
+}
+
+.modal-body {
+  min-height: 0%;
+  max-height: 450px;
+  overflow-y: auto;
+
+  @include media() {
+    max-height: 350px;
+  }
+
+  // &.ie{ @remove tag min-height支持
+  //   height:450px\9; //兼容IE9 上下抖动
+  // }
+}
+
+//内容型 dialog
+.content-modal{
+  .modal-body{
+    width:800px;
+    height:450px;
+    font-size:12px;
+    @include media (){
+      width:600px;
+      height:350px;
+    }
+  }
+}
+//表单型，含有数据操作
+.form-modal{
+  .modal-body{
+    width:1000px;
+    height:550px;
+    font-size:12px;
+    @include media (){
+      width:800px;
+      height:450px;
+    }
+  }
+}
+//.modal-content{
+//  height:100%;
+//}

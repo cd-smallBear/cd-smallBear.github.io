@@ -1,0 +1,133 @@
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `color` and
+// `background-color`.
+
+.tag {
+  position:relative;
+  display: inline-block;
+  // width :120px     remove @wangxiong
+  padding: $tag-padding-y $tag-padding-x;
+  font-size: $tag-font-size;
+  //font-weight: $tag-font-weight;   // remove @wangxiong
+  line-height: 1;
+  color: $tag-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius();
+
+  // Empty tags collapse automatically
+  &:empty {
+    display: none;
+  }
+  &.active,
+  &.selected {   // add @wangxiong
+    position: relative;
+    @include box-shadow(inset 0 0 0 1px $tag-danger-bg);
+    &:after{
+      content:"";
+      position:absolute;
+      bottom:1px;
+      right:1px;
+      width:12px;
+      height:12px;
+      border-bottom-right-radius:$border-radius;
+      background:url("#{$images-path}selected-icon.png");
+    }
+  }
+  [class *= ui-]{
+    position:absolute;
+    top:-.5rem;
+    right:-1rem;
+  }
+}
+.tags {
+  //margin: {
+    //left: -1rem;
+    //bottom: -1rem;
+  //}
+  .tag {
+    margin: {
+      right:1rem;
+      top:.5rem;
+      bottom:.5rem;
+    }
+  }
+}
+// 解决IE兼容问题
+table .tags {
+  border-collapse: separate;
+}
+// change @tag
+.tag-inline {
+  @extend .tag;
+
+  width: auto;
+  padding: .4rem $tag-padding-x;
+}
+
+.tag-sm {
+  font-size: .75rem;
+  padding: .3rem .3rem;
+}
+
+// Quick fix for tags in buttons
+.btn .tag {
+  position: relative;
+  top: -1px;
+}
+
+// scss-lint:disable QualifyingElement
+// Add hover effects, but only for links
+a.tag {
+  @include hover-focus {
+    color: $tag-link-hover-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+// scss-lint:enable QualifyingElement
+
+// Pill tags
+//
+// Make them extra rounded with a modifier to replace v3's badges.
+
+//.tag-pill {   // remove @wangxiong
+//  padding-right: $tag-pill-padding-x;
+//  padding-left: $tag-pill-padding-x;
+//  @include border-radius($tag-pill-border-radius);
+//}
+
+// Colors
+//
+// Contextual variations (linked tags get darker on :hover).
+
+.tag-default {
+  //@include tag-variant($tag-default-bg); // change @wangxiong
+  color:$tag-default-color!important;
+  @include box-shadow(inset 0 0 0 1px $tag-default-bg);
+  &:hover{
+    @include box-shadow(inset 0 0 0 1px $tag-danger-bg);
+  }
+}
+
+.tag-primary {
+  @include tag-variant($tag-primary-bg);
+}
+
+.tag-success {
+  @include tag-variant($tag-success-bg);
+}
+
+.tag-info {
+  @include tag-variant($tag-info-bg);
+}
+
+.tag-warning {
+  @include tag-variant($tag-warning-bg);
+}
+
+.tag-danger {
+  @include tag-variant($tag-danger-bg);
+}

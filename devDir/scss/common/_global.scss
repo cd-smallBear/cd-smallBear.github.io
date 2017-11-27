@@ -1,0 +1,143 @@
+html,body{height:100%;}
+body{
+  overflow:hidden;  //  add  @wangxiong for help-container
+
+}
+.g-head{
+  position:relative;
+  //position:absolute;
+  //top:0;
+  //left:0;
+  z-index: 101;
+  //width:100%;
+
+  .head-top-bar{
+    //position:relative;
+    //z-index:2;
+    padding-right:1rem;
+    color:#fff;
+    background: $brand-primary;
+
+  }
+
+  //&:before{
+  //  content:"";
+  //  position:absolute;
+  //  bottom:0;
+  //  left:$slideWidth;
+  //  right:0;
+  //  height:10px;
+  //  margin-top:-10px;
+  //  @include box-shadow(0 3px 15px rgba(0,0,0,.2))
+  //}
+}
+.g-main{
+   //height:100%;   // chagne 兼容IE9 调整成定位
+   position:absolute;
+   top:$head-nav-height;
+   bottom:0;
+   right:0;
+   //left:$slideWidth;
+   left:0;
+   //width:100%;
+   //padding-top:$head-nav-height;
+
+   padding-right: 1rem;
+
+   margin-left:$slideWidth;
+   padding-left:1rem;
+
+   //margin:{
+   //  left:$slideWidth;
+   //  //top:-$head-nav-height;
+   //};
+   //padding-top:$head-nav-height;
+   //padding-left:1rem;
+   overflow:auto;
+   background: #E9ECF3; // #f5f5f5;
+
+   &-outside{
+     top:0;
+     padding-left:0;
+   }
+
+
+  .main{
+    //height:100%;
+    overflow:auto;
+    //background: #fff;
+  }
+}
+.main{
+  .content{
+    padding:15px;
+  }
+}
+.g-content {
+  padding: $ctn-space;
+  background-color: #fff;
+  position: relative;
+}
+
+
+
+
+
+@include media(){
+  $columns:12;
+  @for $i from 1 through $columns{
+    .col-mdc-#{$i}{
+      width:percentage( $i / $columns );
+    }
+  }
+}
+
+//添加 loading
+.ani-progress {
+  //position:relative; // 因为是放在 g-main
+  &:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 200;
+    width:100%;
+    height:3px;
+    animation: progress 10s forwards;
+    background:#33cc33;
+  }
+}
+.ani-progress-finish{
+  &:before{
+    //animation:progress-finish step-start 1s forwards;
+    animation:none;
+  }
+}
+@keyframes progress {
+  //0%   { width: 0%; }
+  0%   { width: 8%; }
+  //5%   { width: 45%; }
+  //10%  { width: 45%; }
+  //40%  { width: 70%; }
+  //30%  { width: 90%; }
+  25%  { width: 80%; }
+  //40%  { width: 94%; }
+  //60%  { width: 98%; }
+  100% { width: 98% }
+}
+//@keyframes progress-finish {
+//  0%{
+//
+//  }
+//  30%{
+//    width:100%;
+//  }
+//  60%{
+//    width:100%;
+//    opacity:1;
+//  }
+//  65%,100% {
+//    width:100%;
+//    opacity:0;
+//  }
+//}

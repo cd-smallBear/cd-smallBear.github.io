@@ -1,0 +1,10 @@
+.counter{
+  line-height:2;
+  counter-reset:list;
+  li{
+    counter-increment : list;
+    &:before{
+      content: counter(list) "、";
+    }
+  }
+}

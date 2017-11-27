@@ -1,0 +1,17 @@
+//库存管理 入库 需要清除btns上边框
+.dialog{
+  .modal-footer{
+    border:0 none;
+  }
+}
+// 销售门店，选择授权产品
+.storeProDialog{
+  min-height:400px;
+  margin-top:-1rem;
+}
+.expiresDialog{
+  width: 500px;
+  height:200px;
+  line-height: 2;
+  padding: 1rem 0;
+}

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+.room-panel{
+  .room-meta{
+    float:left;
+    //width:320px;
+
+    .item{
+      float:left;
+      padding:1rem;
+      background:#fff;
+      & + .item{
+        margin-left:1rem;
+      }
+    }
+    .room-info{
+      //padding-top:.4rem;
+      @include border(top,$width:3px);
+    }
+
+    .room-status-icon{
+      display:inline-block;
+      font-size:40px;
+      i{
+        display:block;
+      }
+    }
+  }
+
+  .search-form{
+    margin-left:370px;
+    padding-left:1rem;
+  }
+
+  .room-page{
+    margin-top:2rem;
+    //padding-top:1rem;
+    //background:#fff;
+
+    .room-container{
+      min-height:300px;
+      margin-top:2rem;
+      padding:1rem;
+      background:#fff;
+    }
+
+    .room-bar{
+      //display:inline-block;
+      padding:0 0 1rem 1rem;
+      background:#fff;
+    }
+
+    [class *= iconfont]{
+      vertical-align:bottom;
+      font-size:25px;
+      color:$gray-dark;
+    }
+    .check{
+      color:#256bb5;
+    }
+    .entry{
+      color:#fff;
+      color:#094e08;
+    }
+
+  }
+}
+
+
+.room-info{
+  i{
+    color:$gray-dark;
+  }
+  .iconfont-besom{
+    font-size:18px;
+  }
+}
+
+
+.room-container{
+  //$house-status: (entry : $brand-info,check: $brand-primary ,besom: $gray-lighter,repair:$brand-danger);
+  $house-status: (entry :#fbf5c5 ,check: #c3a370 ,besom: #a8a8a8,repair:#fbdbdb);
+  @each $key,$value in $house-status{
+    .room-#{$key}{
+      @if $key == 'besom'{
+        //color:$gray-dark!important;
+      }
+      background-color:$value;
+    }
+  }
+  .room-item{
+    display:inline-block;
+    width:160px;
+    margin-right:3rem;
+    margin-bottom:3rem;
+    padding:.5rem;
+    @include box-shadow(3px 3px 5px rgba(0, 0, 0, .4));
+    //color:#fff;
+    color:#430507;
+
+    //.mark{
+    //  font-size:0;
+    //  opacity:0;
+    //}
+
+
+
+
+  }
+
+
+}
+
+.room-bar{
+  .mark{
+    padding:.4rem .2rem;
+    vertical-align: 4px;
+    background:transparent;
+  }
+}

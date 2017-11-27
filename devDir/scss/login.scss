@@ -1,0 +1,123 @@
+@charset "UTF-8";
+@import   "var",
+          "common/placeholder",
+          "mixins",
+          "bootstrap/mixins",
+
+          "login/common",
+          "login/login",
+          "login/loginAdmin";
+          //"login/reg",
+          //"login/entry";
+
+
+//.g-footer{
+//  //display:none;
+//  //margin-left:180px;
+//  padding:70px 0;
+//  @include border(top);
+//  background:#f2f2f2;
+//
+//  @at-root {
+//    .footer-info{
+//      position:relative;
+//      width:1200px;
+//      margin:0 auto;
+//      padding-left:270px;
+//
+//      &:after{
+//        content:"";
+//        @extend %clearfixCt;
+//      }
+//      .col-info{
+//        float:left;
+//        width:390px;
+//      }
+//      [class *= iconfont]{
+//        margin-right:15px;
+//        font-size:20px;
+//        color:#0d2d62;
+//      }
+//
+//      .links{
+//        a{
+//          line-height:normal;
+//          +a {
+//            margin-left:6px;
+//            &:before{
+//              content:"";
+//              display:inline-block;
+//              width:1px;
+//              height:12px;
+//              vertical-align:-1px;
+//              margin-right:11px;
+//              background:$brand-primary;
+//            }
+//          }
+//        }
+//      }
+//
+//      .brand{
+//        position:absolute;
+//        top:27px;
+//        left:0;
+//        width:270px;
+//        //height:100%;
+//        bottom:0;
+//        text-align:center;
+//        &:after{
+//          content:"";
+//          @extend %children-middle;
+//        }
+//
+//        .brand-deck{
+//          vertical-align:middle;
+//        }
+//
+//        em{
+//          display:inline-block;
+//          width:80%;
+//          padding-top:8px;
+//          color:#0d2d62;
+//          font:{
+//            weight:700;
+//            size:24px;
+//          }
+//        }
+//
+//
+//      }
+//    }
+//  }
+//  @at-root {
+//    .col-info{
+//      & + dl{
+//        margin-left: 75px;
+//      }
+//      .txt-nowrap{
+//        white-space:nowrap;
+//      }
+//      .txt{
+//        &:after{
+//          content: '';
+//          display: block;
+//          width:60px;
+//          margin-bottom: -7px;
+//          padding-top: 6px;
+//          @include border(bottom,$color:$brand-primary);
+//        }
+//      }
+//      dt{
+//        line-height:20px;
+//        margin-bottom:10px;
+//        padding-bottom:6px;
+//        @include border(bottom);
+//        color:$brand-primary;
+//        font-weight: 400;
+//      }
+//      dd{
+//        line-height:35px;
+//      }
+//    }
+//  }
+//}

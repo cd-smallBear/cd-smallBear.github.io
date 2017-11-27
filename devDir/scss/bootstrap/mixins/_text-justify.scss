@@ -1,0 +1,14 @@
+// Text truncate
+// Requires inline-block or block for proper styling
+
+@mixin text-justify() {
+  text-justify: inter-ideograph; // @add tag 兼容IE
+  text-align: justify !important;
+  font-size: 0;
+
+  &:after{
+    content:"";
+    display:inline-block;
+    width:100%;
+  }
+}

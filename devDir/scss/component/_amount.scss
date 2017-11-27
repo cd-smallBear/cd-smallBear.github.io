@@ -1,0 +1,74 @@
+//数字输入框
+// initialzing state
+$numboxWidth : 140px;
+%numbox{
+  display:inline-block;
+  width:$numboxWidth;
+  @include border($color:$box-border-deep);
+  border-radius: 0!important;
+  vertical-align: middle;
+}
+.numbox-initialize{
+  @extend %numbox;
+}
+.m-numbox{
+   @extend %numbox;
+    position: relative;
+    height: 35px;
+    padding:0 40px;
+    //@include border-radius(3px);
+    overflow: hidden;
+    .numbox-pack{
+      height:100%;
+    }
+    .numbox-text{
+      display: inline-block;
+      width: 100%!important;
+      height: 100%;
+      padding: 0 3px!important;
+      margin: 0;
+      overflow: hidden;
+      text-align: center;
+      text-overflow: ellipsis;
+      word-break: normal;
+      border: none;
+      @include border(right,$color:$box-border-deep);
+      @include border(left,$color:$box-border-deep);
+      border-radius: 0!important;
+    }
+    .numbox-btn{
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 100%;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      cursor:pointer;
+      font:{
+        size: 18px;
+        weight: 400;
+        family:"Helvetica Neue", "Segoe UI", Tahoma, Arial, "Hiragino Sans GB", STHeiti, "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
+      }
+      color: #555;
+      text-align:center;
+      background-color: #f9f9f9;
+      &[disabled]{
+        opacity: 0.6;
+        color:#c0c0c0;
+      }
+    }
+
+    .numbox-btn-minus{
+      left: 0;
+      //border-top-left-radius: 3px;
+      //border-bottom-left-radius: 3px;
+    }
+    .numbox-btn-plus{
+      right: 0;
+      //border-top-right-radius: 3px;
+      //border-bottom-right-radius: 3px;
+    }
+
+  }

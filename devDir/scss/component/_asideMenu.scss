@@ -1,0 +1,122 @@
+.g-aside{
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  z-index: 100;
+  width: $slideWidth;
+  //margin-top: -1px;
+  padding-top:1rem;
+  //border-top: 1px solid $box-border-color;
+  //box-shadow: 3px 3px 5px rgba(161, 161, 161, .4);
+  background:$brand-primary;
+  //&:before {
+  //  content: '';
+  //  display: block;
+  //  height: 1rem;
+  //}
+}
+.hotel{
+  margin:0 3px;
+  padding-bottom:1rem;
+  color:#fff;
+   h1{
+     padding:.5rem 0;
+     text-align:center;
+     font-size:2rem;
+   }
+  li{
+    line-height:30px;
+    padding:0 .5rem;
+    @include border(bottom,$color:#fff);
+    color:$gray;
+  }
+  .message{
+    float:right;
+    margin-top:-2px;
+    font-size:20px;
+    color:#fff;
+  }
+}
+.aside-menu {
+  text-align: center;
+  font-size: .875rem;
+
+  %a-hover {
+    color: #fff!important;
+    background-color: darken($brand-primary,20%);
+  }
+
+ .menu-item{
+   position: relative;
+
+   &.active a{
+     @extend %a-hover;
+   }
+
+   >a{
+     padding: 1rem;
+     //font-weight: bold;
+     font-size:1rem;
+   }
+
+
+   @include hover-focus {
+     ul {
+       display: block;
+     }
+     //& > a{
+     //   @extend %a-hover;
+     //}
+   }
+   .subnav{
+     display: none;
+     position: absolute;
+     top: 0;
+     left: 100%;
+     //margin-left: -1px;
+     width: 10rem;
+     @include border();
+     box-shadow: 3px 3px 5px rgba(161, 161, 161, .4);
+     background-color: #fff;
+   }
+
+ }
+
+  a {
+    display: block;
+    transition: all 200ms ease-out;
+    color:#415161;
+    //color:#fff;
+    &:hover
+    //,&.active
+    {
+      @extend %a-hover;
+    }
+    &:focus{
+      color:inherit;
+    }
+  }
+
+  .aside-icon {
+    margin-right: 1.5rem;
+    vertical-align:-2px;
+    font-size: 20px;
+  }
+  .iconfont-meeting{
+    font-weight:700;
+  }
+  .subnav{
+    li{
+      @include border(top,$style:dashed);
+      &:first-child{
+        @include border(top,$none:true);
+      }
+    }
+    a {
+      //color: $sub-color;
+      padding: .5rem 1rem;
+      text-align:left;
+    }
+  }
+}

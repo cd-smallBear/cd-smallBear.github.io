@@ -1,0 +1,29 @@
+.m-dateRange {
+  @include clearfix();
+
+  padding-left: 1rem;
+
+  > * {
+    float: left;
+  }
+
+  > input {
+    width: 50%;
+
+    &:first-child {
+      margin-left: -1rem;
+    }
+  }
+
+  .time-gutter {
+    display: block;
+    width: 1rem;
+    text-align: center;
+    padding: ($input-padding-y - 0.05)  0;
+
+    &:before {
+      content: '-';
+    }
+  }
+}
+

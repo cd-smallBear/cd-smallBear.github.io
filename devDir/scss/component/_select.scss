@@ -1,0 +1,43 @@
+ .m-select{
+    position:relative;
+
+    >.select-txt{
+      padding-right:20px;
+      background:#fff;
+      &:focus{
+        &~ .dropdown-menu {
+          border-color:$brand-primary;
+        }
+      }
+    }
+    .select-caret{  //input的高度为35
+      position:absolute;
+      top:(35 - 4px) / 2;
+      right:10px;
+      z-index:20;
+      &:before{
+        content:"";
+        @include triangle( bottom,4px,$alert-info-text);
+      }
+    }
+   .thumb-switch{
+     position:absolute;
+     top:0;
+     left:100%;
+     line-height:35px;
+     margin-left:.5rem;
+     cursor:pointer;
+     font-size:18px;
+     color: $brand-primary;
+   }
+   .dropdown-menu{
+     //width:100%  兼容ie9宽度显示不正常 改为 min-width
+     min-width:100%;
+   }
+   //  extend  input的高度为50
+   &-extra{
+     .select-caret{
+       top:(50 - 4px) / 2;
+     }
+   }
+  }

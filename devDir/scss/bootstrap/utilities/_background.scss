@@ -1,0 +1,38 @@
+//
+// Contextual backgrounds
+//
+
+.bg-faded {
+  background-color: $gray-lightest;
+}
+
+// @include bg-variant('.bg-white', #fff);
+//
+// @include bg-variant('.bg-secondary', $box-border-color);
+//
+// @include bg-variant('.bg-primary', $brand-primary);
+//
+// @include bg-variant('.bg-success', $brand-success);
+//
+// @include bg-variant('.bg-info', $brand-info);
+//
+// @include bg-variant('.bg-warning', $brand-warning);
+//
+// @include bg-variant('.bg-danger', $brand-danger);
+//
+// @include bg-variant('.bg-inverse', $brand-inverse);
+//
+// @include bg-variant('.bg-magenta', #852b99);
+//
+// @include bg-variant('.bg-darkgreen', #28b779);
+//
+// @include bg-variant('.bg-darkyellow', #ff864a);
+
+
+@mixin renderBgColors( $nameColors ) {
+  @each $key,$value in  $nameColors {
+    @include bg-variant( #{$key}, $value);
+  }
+}
+
+@include renderBgColors( $renderBgColorList )

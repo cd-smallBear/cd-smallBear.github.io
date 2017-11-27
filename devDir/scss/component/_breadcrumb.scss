@@ -1,0 +1,15 @@
+.m-breadcrumb{
+  padding:.5rem 0;
+  line-height: 1;
+  font-size: .875rem;
+  // background:#f5f5f5;
+
+  .site{
+    color: $brand-danger;
+    font-size:1rem;
+  }
+  .breadcrumb{
+    display:inline-block;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,93 @@
+.table{
+  word-break: break-all;  // add @tag 解决英文换行
+
+
+  .label{
+    width:1%;
+    min-width:150px;
+    font-weight:700;
+    text-align:center;
+    background:$box-border-gray;
+
+    &-sm{
+      min-width:110px;
+    }
+    & + td{
+      width:18%;
+      text-align:left;
+    }
+  }
+
+
+  &-width{
+    min-width:1440px;
+  }
+
+  &-fixed {
+    table-layout: fixed;
+  }
+}
+
+.table-left {
+  td, th {
+    text-align: left;
+  }
+}
+.table-center {
+  td, th {
+    text-align: center;
+  }
+}
+
+.table-head{
+  thead{
+    th,td{
+      background:$box-border-gray;
+    }
+  }
+  tr{
+    th{
+      // font-size:14px;
+    }
+  }
+}
+
+.table-separate{
+  border-collapse: separate;
+  border-spacing:0 5px;
+  thead{
+    @include border(bottom,$color:$box-border-deep);
+    th,td{
+      @include border(left,$color:$box-border-deep);
+      &:first-child{
+        border-color:transparent;
+      }
+    }
+  }
+  tbody{
+    td{
+      @include border(top,$color:$box-border-deep);
+    }
+  }
+}
+
+.data-table{
+  padding:1rem;
+  text-align:center;
+  font-size:12px;
+  overflow-x:auto;
+  background:#fff;
+
+  .btn-link{
+    white-space: nowrap;
+    margin:0 5px;
+  }
+
+  &-extra{
+    padding-top:0;
+    margin-top:-17px;
+  }
+
+
+}
+

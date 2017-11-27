@@ -1,0 +1,71 @@
+.search{
+  //padding:1rem 0 5px;
+  padding-bottom:.5rem;
+  //&:after{
+  //  @include clearfix();
+  //}
+
+  .search-row{
+    padding:1rem 0 0;
+  }
+  .search-item{
+    display:inline-table;
+    vertical-align:top;
+    font-size:.875rem;
+
+    >:first-child{
+      & + [class *= search]{
+        padding-left:1rem;
+      }
+    }
+
+    .search-label{
+      @extend %table-cell;
+      //padding-right:1rem;
+      //width: 24%;
+      //min-width: 72px;
+      font:{
+        weight:400;
+        size:14px;
+      }
+      white-space:nowrap;
+      &-normal{
+        width:auto;
+        min-width:auto;
+      }
+      &-msg{
+        width:auto;
+        line-height:normal!important;
+        vertical-align: top;
+      }
+    }
+
+    .search-box{
+        @extend %table-cell;
+        //width: 200px; //找不到原因，要删掉。新增招商有用，不需要宽度
+        &-static{
+          height:35px;
+          line-height:35px;
+        }
+      &-validate{
+        position:relative;
+      }
+    }
+
+    //.feedback{
+    //  position:absolute;
+    //  top:100%;
+    //  left:0;
+    //}
+    &:not(.notpd) + .search-item{
+      margin-left:1rem;
+    }
+
+    .fixed{
+      width:200px;
+    }
+  }
+  & + .search{
+    margin-top:1rem;
+  }
+}

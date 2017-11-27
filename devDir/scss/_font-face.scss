@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('#{$font-path}/icom.eot?6mfk7a');
+  src:url('#{$font-path}/icom.eot?6mfk7a#iefix') format('embedded-opentype'),
+  url('#{$font-path}/icom.ttf?6mfk7a') format('truetype'),
+  url('#{$font-path}/icom.woff?6mfk7a') format('woff'),
+  url('#{$font-path}/icom.svg?6mfk7a#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class *= "iconfont-"]{
+  @extend %icon-font;
+
+  &.align{
+    vertical-align: -2px;
+  }
+}
+
+.iconfont-user:before {
+  content: "\e90b";
+}
+.iconfont-lock:before {
+  content: "\e90a";
+}
+.iconfont-home:before {
+  content: "\e920";
+}
+.iconfont-order:before {
+  content: "\e908";
+}
+.iconfont-exit:before {
+  content: "\e909";
+}
+.iconfont-del:before {
+  content: "\e907";
+}
+.iconfont-message:before {
+  content: "\e906";
+}
+.iconfont-member:before {
+  content: "\e905";
+}
+.iconfont-chart:before {
+  content: "\e904";
+}
+.iconfont-meeting:before {
+  content: "\e903";
+}
+.iconfont-sale:before {
+  content: "\e902";
+}
+.iconfont-catering:before {
+  content: "\e901";
+}
+.iconfont-room:before {
+  content: "\e900";
+}
+
+.iconfont-arrow-left:before {
+  content: "\e91b";
+}
+.iconfont-arrow-down:before {
+  content: "\e91a";
+}
+.iconfont-open:before {
+  content: "\e90c";
+}
+.iconfont-close:before {
+  content: "\e90d";
+}
+.iconfont-repair:before {
+  content: "\e90e";
+}
+.iconfont-entry:before {
+  content: "\e90f";
+}
+.iconfont-check:before {
+  content: "\e912";
+}
+.iconfont-besom:before {
+  content: "\e910";
+}
+.iconfont-search:before {
+  content: "\e911";
+}
+
+//---  separate  --

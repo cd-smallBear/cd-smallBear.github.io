@@ -1,0 +1,11 @@
+html,body,.g-main{
+  height:100%;
+}
+.g-content{
+  height:100%;
+  min-height:500px;
+  margin-left:$slideWidth;
+  padding:1rem 1rem 0 1rem;
+  overflow:auto;
+  background:$box-border-gray;
+}

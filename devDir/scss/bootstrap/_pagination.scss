@@ -1,0 +1,119 @@
+.pagination {
+  display: inline-block;
+  //margin-top: $spacer-y;     //remove   为了兼容bootstrap.table.js
+  //margin-bottom: $spacer-y;
+  padding-left: 0;
+  // @include border-radius(); // change @tag
+  vertical-align:middle;      // add @WangXiong
+
+
+.page-item {
+  //display: inline; // Remove list-style and block-level defaults // @change WangXiong
+  float:left;
+  // &:first-child {
+  //   .page-link {
+  //     margin-left: 0;
+  //     @include border-left-radius($border-radius);
+  //   }
+  // }
+  // &:last-child {
+  //   .page-link {
+  //     @include border-right-radius($border-radius);
+  //   }
+  // }
+
+  &.active .page-link {
+    @include plain-hover-focus {
+      z-index: 2;
+      color: $pagination-active-color;
+      cursor: default;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border;
+    }
+  }
+
+  &.disabled .page-link {
+    @include plain-hover-focus {
+      color: $pagination-disabled-color;
+      pointer-events: none;
+      cursor: $cursor-disabled;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border;
+    }
+  }
+}
+}
+// create @tag
+%page-children {
+  float: left; // Collapse white-space
+  margin: {
+    left: $pagination-margin-x;
+    right: $pagination-margin-x;
+  }
+}
+
+.page-link {
+  @extend %page-children;
+
+  position: relative;
+  padding: $pagination-padding-y $pagination-padding-x;
+  color: $pagination-color;
+  text-decoration: none;
+  background-color: $pagination-bg;
+  border: $pagination-border-width solid $pagination-border-color;
+
+  @include hover-focus {
+    color: $pagination-hover-color;
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border;
+  }
+}
+
+// create @tag
+.page-input {
+  @extend %page-children;
+
+  > input {
+    border: 1px solid $pagination-border-color;
+  }
+}
+.page-text {
+  @extend %page-children;
+
+  padding: {
+    top: $pagination-padding-y;
+    bottom: $pagination-padding-y;
+  }
+}
+.page-btn {
+  @extend %page-children;
+
+  padding: $pagination-padding-y $pagination-padding-x;
+}
+.page-input {
+  input {
+    text-align: center;
+    width: 2.5rem;
+    height: 100%;
+    padding: {
+      top: $pagination-padding-y;
+      bottom: $pagination-padding-y;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid $pagination-active-border;
+    };
+  }
+}
+
+//
+// Sizing
+//
+
+.pagination-lg {
+  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $border-radius-lg);
+}
+
+.pagination-sm {
+  @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+}

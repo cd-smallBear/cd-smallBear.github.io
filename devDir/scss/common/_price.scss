@@ -1,0 +1,7 @@
+.price{
+  &:before {
+    content: '¥';
+    margin-right:.3rem;
+    font-size: .875rem;
+  }
+}

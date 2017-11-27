@@ -1,0 +1,93 @@
+//
+// Progress animations
+//
+
+@keyframes progress-bar-stripes {
+  from { background-position: $spacer-y 0; }
+  to { background-position: 0 0; }
+}
+
+
+//
+// Basic progress bar
+//
+
+.progress {
+  font-size: .75rem;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background-color: $progress-bg;
+  @include border-radius($progress-border-radius);
+  display: inline-block;
+
+  height: $spacer-y + .1rem; // todo: make a new var for this
+  line-height: $spacer-y + .1rem; // todo: make a new var for this
+}
+
+.progress-bar {
+  color: #fff;
+  height: 100%;
+  text-align: right;
+  padding-right: .5rem;
+}
+
+//
+// Striped
+//
+
+.progress-striped[value]::-webkit-progress-value {
+  @include gradient-striped();
+  background-size: $spacer-y $spacer-y;
+}
+.progress-striped[value]::-moz-progress-bar {
+  @include gradient-striped();
+  background-size: $spacer-y $spacer-y;
+}
+.progress-striped[value]::-ms-fill {
+  @include gradient-striped();
+  background-size: $spacer-y $spacer-y;
+}
+// IE9
+@media screen and (min-width:0\0) {
+  .progress-bar-striped {
+    @include gradient-striped();
+    background-size: $spacer-y $spacer-y;
+  }
+}
+
+
+//
+// Animated
+//
+
+.progress-animated[value]::-webkit-progress-value {
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-animated[value]::-moz-progress-bar {
+  animation: progress-bar-stripes 2s linear infinite;
+}
+// IE9
+@media screen and (min-width:0\0) {
+  .progress-animated .progress-bar-striped {
+    animation: progress-bar-stripes 2s linear infinite;
+  }
+}
+
+
+//
+// Variations
+//
+
+.progress-success {
+  @include progress-variant($progress-bar-success-bg);
+}
+.progress-info {
+  @include progress-variant($progress-bar-info-bg);
+}
+.progress-warning {
+  @include progress-variant($progress-bar-warning-bg);
+}
+.progress-danger {
+  @include progress-variant($progress-bar-danger-bg);
+}

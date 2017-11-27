@@ -1,0 +1,130 @@
+.m-pagination{
+    line-height: 38px;
+    //padding-top:20px;
+    text-align:center;
+
+  .pagination{
+    margin-top:1.5rem;
+  }
+
+    li{
+      display: inline-block;
+      margin-right:10px;
+    }
+    .page-pre,.page-next{
+      font-size:1rem;
+    }
+    a{
+      display:inline-block;
+      width:40px;
+      margin:0 5px;
+      padding: 0 12px;
+      @include border();
+      color:#949494;
+      &:hover{
+        color:$brand-primary;
+        border-color:$brand-primary;
+      }
+    }
+    .gray{
+      color:#c9c9c9;
+      border-color:#e4e4e4;
+    }
+    //.current{
+    //  color:$brand-primary;
+    //  border-color:$brand-primary;
+    //}
+  .active {
+    a{
+      color:$brand-primary;
+      border-color:$brand-primary;
+    }
+  }
+  .disabled{
+    a{
+      border-color:#eee;
+      cursor:default;
+      background:#eee;
+
+    }
+  }
+
+    //.page-nums{
+    //  a{
+    //    width:40px;
+    //    padding:0;
+    //    &:hover{
+    //      color:$brand-primary;
+    //      border-color:$brand-primary;
+    //    }
+    //  }
+    //}
+    .btn-skip{
+      @extend %inline-block;
+      //line-height: 18px;
+      //height:18px;
+      margin-left:12px;
+      //padding:0 2px;
+      vertical-align:0;
+      @include border-radius(4px);
+      //text-transform: uppercase;
+      //color: #fff;
+      background: #eee;
+    }
+    .skip-txt{
+      width: 40px;
+      height:40px;
+      margin: 0 5px;
+      padding:0;
+      @include border();
+      text-align:center;
+      background:#fff;
+    }
+    select{
+      padding: 1px;
+      vertical-align:0;
+      font-size:inherit;
+    }
+    &-ext{
+      line-height: 28px;
+      .page-nums{
+        a{
+          width:30px;
+        }
+      }
+    }
+  }
+// bootstrap.table.js 左则页码信息
+.pagination-detail{
+  line-height:40px;
+  .pagination-info{
+    margin-right:.5rem;
+  }
+}
+.ui-pages{
+  text-align:right;
+  a{
+    display: inline-block;
+    margin-left: .5rem;
+    padding: 4px 1.2em;
+    border: 1px solid $box-border-deep;
+    @include border-radius(3px);
+    color: $title-color;
+    @include gradient-vertical(#f7f7f7 0,#f3f2f2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f3f2f2', GradientType='0');
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f3f2f2');
+    font:12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+    &:hover{
+      @include box-shadow(0 1px 3px rgba(0,0,0,.1));
+      color: $brand-danger;
+    }
+  }
+  a.page-curr{
+    border: 0;
+    @include box-shadow(none);
+    color: $brand-danger;
+    cursor: default;
+    font-weight: 700;
+    background:none;
+  }
+}

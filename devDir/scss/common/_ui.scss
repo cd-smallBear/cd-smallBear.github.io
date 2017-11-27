@@ -1,0 +1,196 @@
+//伪表单样式
+.ui-checkbox,.ui-radio{
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 0;  // change @tag
+  margin-right:3px;
+  //vertical-align: -3px; // change @tag
+  vertical-align:middle; // change @wangxiong
+  font-size: 0;
+  &-emulation{
+    display:none;
+    cursor: pointer;
+  }
+}
+.ui-label{
+  display: inline-block;
+  margin:{
+    right:10px;
+    bottom:0;
+  };
+  vertical-align: middle;
+  cursor: pointer;
+  //font: 14px/32px tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,'\5FAE\8F6F\96C5\9ED1','\5B8B\4F53',sans-serif;
+}
+//兼容写法
+:root{
+  .ui-checkbox-normal{
+    display:none;
+
+    &:checked {
+      & + .ui-checkbox-emulation{
+        background-position:-24px 0;
+      }
+
+      &[disabled] + .ui-checkbox-emulation{
+        background-position:0 0;
+      }
+    }
+    &[disabled] + .ui-checkbox-emulation{
+      background-position:0 -21px;
+    }
+  }
+  .ui-radio-normal{
+    display:none;
+
+    &:checked {
+      & + .ui-radio-emulation{
+        background-position:0 -42px;
+      }
+
+      &[disabled] + .ui-radio-emulation{
+        background-position: -48px -21px;
+      }
+    }
+
+    &[disabled] + .ui-radio-emulation{
+      background-position:-21px -42px;
+    }
+
+  }
+
+  %emulation{
+    display: block;
+    height: 16px;
+    margin:0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: url("#{$images-path}ui-form.png");
+  }
+  .ui-checkbox-emulation{
+    width: 19px;
+    @extend %emulation;
+     background-position: -48px 0;
+     &:hover{
+       background-position: -24px -21px;
+     }
+
+   }
+  .ui-radio-emulation{
+    width: 16px;
+    @extend %emulation;
+    background-position: -72px 0;
+    &:hover{
+      background-position: -42px -42px;
+    }
+  }
+}
+// 输入框，防止password 记住密码
+.ui-input-emulation{
+  position:relative;
+  height:35px;
+  line-height: $input-line-height;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  color: $input-color;
+  background-color: $input-bg;
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+  background-clip: padding-box;
+  border: $input-btn-border-width solid $input-border-color;
+  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  @if $enable-rounded {
+    // Manually use the if/else instead of the mixin to account for iOS override
+    border-radius: $input-border-radius;
+  } @else {
+    // Otherwise undo the iOS default
+    border-radius: 0;
+  }
+
+  &.active{
+    border-color:$brand-primary;
+  }
+  .ui-input-value{
+    position:absolute;
+    opacity:0;
+    width:1px;
+    padding:0;
+    border:0 none;
+    outline:none;
+  }
+  .ui-input-blink{
+    position:absolute;
+    top: $input-padding-y;
+    left: $input-padding-x;
+    width:1px;
+    height:17px;
+    background:url("#{$images-path}blink.gif") no-repeat center;
+    //color:transparent;
+  }
+
+  //.ui-input-text{
+  //  position:absolute;
+  //  top: $input-padding-y;
+  //  left: $input-padding-x;
+  //  width:1px;
+  //  padding:0;
+  //  border:0 none;
+  //  outline:none;
+  //}
+}
+.ui-digit-emulation{
+  position:relative;
+  display:block;
+  width: 0;
+  height:16px;
+  margin-top:1px;
+  overflow:hidden;
+  //padding:$input-padding-y $input-padding-x;
+
+  i{
+    float:left;
+    width:11px;
+    height:16px;
+    background:url("#{$images-path}digit.png") no-repeat center;
+  }
+
+}
+
+//生成状态图标
+@each $key,$value in  $coordinate{
+
+    @if $key != 'loading'{
+       .ui-state-#{$key}{
+          @extend %ui-state;
+          @if( $key == 'del'){
+            width:21px;
+            height:21px;
+          }
+          background-position:$value;
+        }
+    }@else{
+      .before-state-#{$key}:before {
+        content: '';
+      }
+      .ui-state-#{$key}, .before-state-#{$key}:before {
+        @extend %ui-state;
+        background:url("#{$images-path}loading.gif") no-repeat center;
+      }
+    }
+}
+.feedback{
+  @each $item in map-keys($coordinate){
+    &-#{$item}{
+      &:before{
+        content:"";
+        @if($item == 'loading'){
+          background:url("#{$images-path}loading.gif") no-repeat center;
+        }@else{
+          background-position:map-get($coordinate,$item);
+        }
+        @extend %ui-state;
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+.form-control-feedback {
+  @include text-truncate();
+  min-height: 1.2rem;
+  font-size:.75rem;
+  .error {
+    &:before {
+      @extend %icon-font;
+
+      font-size:16px;
+      vertical-align: -2px;
+      content: '\e906';
+    }
+  }
+
+  &:not(.form-control-static) {
+    margin: {
+      top: .2rem;
+      bottom: .5rem;
+    }
+  }
+
+  &.auto-heg {
+    min-height: inherit;
+  }
+}
+.valid-tooltip .tooltip-inner{
+  max-width: none;
+  background-color: $brand-danger;
+
+  &:before {
+    border-top-color: $brand-danger !important;
+  }
+}
+
+
+//注册，修改密码，修改邮箱等
+.form{
+
+  .feedback {
+    position:absolute;
+    top:0;
+    left:105%;
+    //height: 50px;
+    height:100%;
+    //line-height: 50px;
+    white-space: nowrap;
+    color: $brand-danger;
+    //&-sm{
+    //  height:35px;
+    //  line-height:35px;
+    //  margin:0;
+    //}
+    &:after{
+      content:"";
+      @extend %children-middle;
+    }
+  }
+
+  .verity-input{
+    width:180px;
+  }
+
+  .btn-verity-code{
+    @extend %float-right;
+    width:114px;
+    line-height:1.25;
+    padding:{
+      right:0;
+      left:0;
+    }
+  }
+  .verity-img-box{
+    @extend %float-right;
+    width:114px;
+    height:50px;
+    white-space:nowrap;
+    text-align:right;
+    img{
+      max-width:100%;
+      max-height:100%;
+      cursor:pointer;
+    }
+    //&:before{
+    //  content:"";
+    //  display: inline-block;
+    //  height: 100%;
+    //  vertical-align: middle;
+    //}
+
+    @extend %children-middle;
+  }
+
+  .form-control{
+    &.verity-input,&.showhelp{
+      & + .input-help{
+        visibility:hidden;
+      }
+    }
+    &.verity-input:focus,&.showhelp:focus{
+      & + .input-help{
+        visibility: visible;
+      }
+    }
+  }
+
+  .form-group {
+    margin-bottom:2rem;
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+
+  .input-help{    //单字段下方提示信息
+    margin-bottom:-23px;
+    padding-top: 5px;
+    white-space:nowrap;
+    font-size:12px;
+    color:$sub-color;
+  }
+}
+
+
+// .inline-form {
+//   label.media-left {
+//     vertical-align: middle;
+//
+//      &:before {
+//        content: '';
+//        display: block;
+//        width: 4rem;
+//      }
+//   }
+// }
+
+.form-group {
+  &.bg-field, .bg-field {
+    padding: .5rem;
+    background-color: $box-border-gray;
+  }
+}
+
+
+@include media-breakpoint-up(sm) {
+  .offset-sm-label {
+    float: left;
+    width: 6rem;
+    line-height: $input-line-height;
+    padding-left: $grid-gutter-width-base * .5;
+    //margin-bottom: #{$line-height-base - $input-line-height}rem; // 解决原来1.5rem现在改成1.25，导致上下没间隔  remove @wangxiong reason:  col-form-label 有足够的下下内边距
+  }
+  .offset-sm-input {
+    padding-left: 6rem + $grid-gutter-width-base * .5;
+  }
+}
+
+.offset-label-short { //add Wangxiong
+  @include media-breakpoint-up(null) {
+    float: left;
+    width: 4.5rem;
+    padding: {
+      left: $grid-gutter-width-base * .5;
+    }
+    & + .offset-input {
+      padding-left: 4.5rem + $grid-gutter-width-base * .5;
+    }
+  }
+}
+
+.offset-sm-static {
+  padding-left: $grid-gutter-width-base * .5;
+}
+
+.cols {
+  >*:first-child {
+    padding-left: 0;
+  }
+}
+.offset-sm-5-form {
+  .offset-sm-label {
+    width: 5rem;
+  }
+  .offset-sm-input {
+    padding-left: 5rem + $grid-gutter-width-base * .5;
+  }
+}
+
+
+.col-label{
+  &-required{
+    &:before{
+      content:"*";
+      margin-right:3px;
+      vertical-align:-3px;
+      color:$brand-danger;
+    }
+  }
+
+  &-holder{
+    &:before{
+      content:"*";
+      margin-right:3px;
+      vertical-align:-3px;
+      color:#fff;
+    }
+  }
+}
+
+.input-loading {
+  padding-right: 30px;
+  background: url("#{$images-path}loading.gif") no-repeat 95% center;
+}

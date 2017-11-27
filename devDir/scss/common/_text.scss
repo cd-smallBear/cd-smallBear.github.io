@@ -1,0 +1,32 @@
+// create @tag
+
+//.text-bm-border {
+//  border-bottom: 1px solid $box-border-color;
+//}
+
+// 辅助文字
+.text-subsidiary {
+  color: $gray-lighter;
+}
+
+
+//.text-body {
+//  color: $body-color !important;
+//}
+
+//.text-indent {
+//  margin-left: 1rem;
+//}
+
+
+//.text-sub {
+//  color: $sub-color;
+//}  @change wagnxion  bootstrap/utilites /text.scss 里面有 text-muted
+.text-title {
+  color: $title-color;
+}
+
+//.text-w-6rem {
+//  display: inline-block;
+//  width: 6rem;
+//}
