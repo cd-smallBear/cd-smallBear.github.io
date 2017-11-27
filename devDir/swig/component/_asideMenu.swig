@@ -27,7 +27,7 @@
     {% for val in asideMenus %}
     {% set parentLabel = loop.key %}
     <li class="menu-item{% if selectedMenu.caption == loop.key %} active{% endif %}" >
-      <a href="{% if val.index %}{{ val.url }}/index.html{% else %}{{ val.url }}{% endif %}"><i class="aside-icon iconfont-{{ val.icon }}"></i>{{ loop.key }}</a>
+      <a href="{% if val.index %}{{ rootDir + val.url }}/index.html{% else %}{{ rootDir + val.url }}{% endif %}"><i class="aside-icon iconfont-{{ val.icon }}"></i>{{ loop.key }}</a>
       {% if val.children.length %}
       <ul class="nav subnav">
         {% for url in val.children %}

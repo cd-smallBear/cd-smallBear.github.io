@@ -10,8 +10,8 @@
 {%- endblock %}
  
 {%- block style %}
-<link rel="stylesheet" href="/css/admin.css">  
-<link rel="stylesheet" href="/css/pages/member.css">
+<link rel="stylesheet" href="{{css.root + 'admin.css'}}">  
+<link rel="stylesheet" href="{{css.pages + 'member.css'}}">
 {% endblock -%}
 
 {% block content %}
@@ -141,5 +141,5 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<!-- <script src="{{js.libPath + 'require.js'}}" data-main="/js/pages/member.js"></script> -->
+<!-- <script src="{{js.lib + 'require.js'}}" data-main="{{js.pages + 'member.js'}}"></script> -->
 {% endblock %}

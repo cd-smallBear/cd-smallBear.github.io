@@ -9,8 +9,8 @@
 {%- endblock %}
  
 {%- block style %}
-<link rel="stylesheet" href="/css/admin.css"> 
-<link rel="stylesheet" href="/css/pages/order.css">
+<link rel="stylesheet" href="{{css.root + 'admin.css'}}">  
+<link rel="stylesheet" href="{{css.pages + 'order.css'}}">
 {% endblock -%}
 
 {% block content %}

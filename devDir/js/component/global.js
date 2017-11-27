@@ -1,5 +1,6 @@
 (function () {
  var HotelConfig = window.HotelConfig = {
+        root : "/hotel",
         JsVersion : 1
      }
     var Hotel = window.Hotel = {
@@ -311,7 +312,7 @@
             $(document).off('click.imgpreview')
         },
         requireConfig: {
-            baseUrl: '/js',
+            baseUrl: HotelConfig.root + '/js',
             //  urlArgs: function(id, url) {
             //    console.log('arg: ', arguments)
             //    return url + '?v=' + '1'

@@ -7,8 +7,8 @@ module.exports = ( buildPath )=> {
   return {
       // files: [ devPath+'/scss/**/*.scss' ],    //监听某些文件
       server: {
-        baseDir: buildPath,
-        index: '/login/login.html',
+        baseDir: "./",
+        index: buildPath + '/login/login.html',
         // 中间件！
         middleware: function(req, res, next) {
             next();

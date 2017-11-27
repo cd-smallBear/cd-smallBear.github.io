@@ -10,7 +10,7 @@ define(["dropdownSelect","bsDialog","jeDate"],function(dropdownSelect,bsDialog){
   $("#startDate").rangeJeDate($("#emdDate"));
 
   $("#add-member").click(function(){
-    bsDialog.ajaxPage("创建新会员","/forms/dialog-addMember.html",function($element,dialog){
+    bsDialog.ajaxPage("创建新会员",HotelConfig.root + "/forms/dialog-addMember.html",function($element,dialog){
       dropdownSelect($element.find("#dropdown-discounts"));
     },{
       classes : "modal-wid600",

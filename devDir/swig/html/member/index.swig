@@ -10,8 +10,8 @@
 {%- endblock %}
  
 {%- block style %}
-<link rel="stylesheet" href="/css/admin.css"> 
-<link rel="stylesheet" href="/css/pages/member.css">
+<link rel="stylesheet" href="{{css.root + 'admin.css'}}">  
+<link rel="stylesheet" href="{{css.pages + 'member.css'}}">
 {% endblock -%}
 
 {% block content %}
@@ -122,7 +122,7 @@
 			 	 			<td>5</td>
 			 	 			<td>she is my sin</td>
 			 	 			<td>
-			 	 				<a href="/member/details.html" class="text-success">查看</a>
+			 	 				<a href="{{rootDir}}/member/details.html" class="text-success">查看</a>
 			 	 				<a href="javascript:;" class="text-danger">删除</span>
 			 	 			</td>
 			 	 		</tr>
@@ -140,7 +140,7 @@
 			 	 			<td>5</td>
 			 	 			<td>she is my sin</td>
 			 	 			<td>
-			 	 				<a href="/member/details.html" class="text-success">查看</a>
+			 	 				<a href="{{rootDir}}/member/details.html" class="text-success">查看</a>
 			 	 				<a href="javascript:;" class="text-danger">删除</span>
 			 	 			</td>
 			 	 		</tr>
@@ -159,5 +159,5 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script src="{{js.libPath + 'require.js'}}" data-main="/js/pages/member.js"></script>
+<script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'member.js'}}"></script>
 {% endblock %}

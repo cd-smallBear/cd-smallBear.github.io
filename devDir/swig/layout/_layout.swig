@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
 	{% endblock %}
-    <link rel="stylesheet" href="{{ css.common }}">
+    <link rel="stylesheet" href="{{css.common }}">
 
 	{%- block style %}{% endblock -%}
 	{% block preScript %}{% endblock %}
@@ -39,7 +39,7 @@
 	<script src="{{ js.lib.jq }}" ></script>
 	<script src="{{ js.lib.bootstrap.tether }}"></script>
 	<script src="{{ js.lib.bootstrap.base }}" ></script>
-	<script src="/js/component/global.js" ></script>
+	<script src="{{ js.root + 'component/global.js'}}" ></script>
 	{% block scripts %}{% endblock %}
 </body>
 </html>

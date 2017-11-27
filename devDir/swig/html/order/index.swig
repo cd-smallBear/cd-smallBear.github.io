@@ -9,8 +9,8 @@
 {%- endblock %}
  
 {%- block style %}
-<link rel="stylesheet" href="/css/admin.css"> 
-<link rel="stylesheet" href="/css/pages/order.css">
+<link rel="stylesheet" href="{{css.root + 'admin.css'}}">  
+<link rel="stylesheet" href="{{css.pages + 'order.css'}}">
 {% endblock -%}
 
 {% block content %}
@@ -81,17 +81,17 @@
 		 	 		<thead>
 		 	 			<tr>
 		 	 				<td width="200">订单号</td>
-		 	 				<td>房型</td>
-		 	 				<td>房号</td>
-		 	 				<td>天数</td>
-		 	 				<td>入住时间</td>
-		 	 				<td>退房时间</td>
-		 	 				<td width="200">金额</td>
+		 	 				<td width="80">房型</td>
+		 	 				<td width="80">房号</td>
+		 	 				<td width="60">天数</td>
+		 	 				<td width="120">入住时间</td>
+		 	 				<td width="120">退房时间</td>
+		 	 				<td width="150">金额</td>
 		 	 				<td>订单状态</td>
-		 	 				<td>姓名</td>
+		 	 				<td width="80">姓名</td>
 		 	 				<td>下单时间</td>
 		 	 				<td>付款状态</td>
-		 	 				<td width="200">操作</td>
+		 	 				<td >操作</td>
 		 	 			</tr>
 		 	 		</thead>
 		 	 		<tbody>
@@ -125,7 +125,7 @@
 			 	 			</td>
 			 	 			<td>
 			 	 				<span class="text-subsidiary">取消</span>
-			 	 				<a href="/order/details.html" class="text-success">查看</a>
+			 	 				<a href="{{rootDir}}/order/details.html" class="text-success">查看</a>
 			 	 				<span class="text-danger">申请退款</span>
 			 	 			</td>
 			 	 		</tr>
@@ -178,5 +178,5 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script src="{{js.libPath + 'require.js'}}" data-main="/js/pages/order.js"></script>
+<script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'order.js'}}"></script>
 {% endblock %}

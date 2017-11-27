@@ -8,7 +8,7 @@
 {%- endblock %}
 
 {%- block style %}
-<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="{{css.root + 'login.css'}}">
 {% endblock -%}
 
 {% block main %}
@@ -48,5 +48,5 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script src="/js/pages/login.js"></script>
+<script src="{{js.pages + 'login.js'}}"></script>
 {% endblock %}

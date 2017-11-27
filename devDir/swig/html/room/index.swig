@@ -9,8 +9,8 @@
 {%- endblock %}
 
 {%- block style %}
-<link rel="stylesheet" href="/css/admin.css"> 
-<link rel="stylesheet" href="/css/pages/room.css">
+<link rel="stylesheet" href="{{css.root + 'admin.css'}}">  
+<link rel="stylesheet" href="{{css.pages + 'room.css'}}">
 {% endblock -%}
 
 {% block content %}
@@ -170,5 +170,5 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script src="{{js.libPath + 'require.js'}}" data-main="/js/pages/room.js"></script>
+<script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'room.js'}}"></script>
 {% endblock %}

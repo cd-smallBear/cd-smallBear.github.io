@@ -1,2 +1,2 @@
   var gulpBuild = require('./config/runconfig.js');
-    gulpBuild( './devDir', './buildDir', './proDir' );
+    gulpBuild( './devDir', './hotel', './proDir' );
