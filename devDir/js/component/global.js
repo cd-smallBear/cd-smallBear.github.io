@@ -331,7 +331,7 @@
             },
             paths: {
                 // 'validate'   : 'lib/validate',
-                // 'webuploader': 'lib/webuploader',
+                'webuploader': 'lib/webuploader',
                 'jeDate'     : 'lib/jquery.jedate',
                 // 'btTree'     : 'lib/bootstrap-treeview',
                 // 'table'      : 'lib/bootstrap.table',
@@ -344,7 +344,7 @@
                 // 'addProduct'    : 'component/new-product',
                 // 'autoComplete'  : 'component/auto-complete',
                 // 'areaCaseSelecter'   : 'component/area-case-selecter',
-                // 'webuploader.setting': 'component/webuploader.setting',
+                'webuploader.setting': 'component/webuploader.setting',
                 'bsDialog'      : 'component/bs-dialog',
        
            

@@ -1,4 +1,4 @@
-<div class="member-add-dialog">
+<div class="dialog-add-member">
 	 <form action="" class="form">
 	 	<div class="form-grouprow">
  		  <div class="form-group row">

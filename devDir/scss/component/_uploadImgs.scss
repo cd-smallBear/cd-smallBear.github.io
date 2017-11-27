@@ -1,5 +1,24 @@
 
 //把upload.css拿进来了
+.upload-container{
+  .upload-help{
+    margin-left: 1rem;
+    color: $gray-lighter;
+    font-size: .625rem;
+    font-weight: 400;
+  }
+  .upload-tips{
+    text-align: center;
+    color: $gray-lighter;
+  }
+  .upload-disabled{
+    opacity:.5;
+    cursor:not-allowed;
+  }
+  .upload-img-wrapper{
+    padding-top:.5rem;
+  }
+}
 .webuploader-container {
   position: relative;
 }
@@ -56,8 +75,8 @@
 
   position: relative;
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   padding: 3px;
   border: solid 1px #ddd;
   font-size: 0;
@@ -65,10 +84,10 @@
   // vertical-align: middle;
   background-color: #ececec;
 }
-.upload-img-btn {
-  width: 200px;
-  height: 200px;
-}
+//.upload-img-btn {
+//  width: 200px;
+//  height: 200px;
+//}
 
 .img-item-new .file-img-name {
   padding-top: 8px;

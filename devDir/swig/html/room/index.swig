@@ -102,8 +102,8 @@
 						</div>
 						<div class="search-item ml-4">
 							<span class="btns">
-							 <button type="button" class="btn btn-subsidiary">+添加房间</button>
-							 <button type="button" class="btn btn-subsidiary">+添加楼层</button>
+							 <button type="button" class="btn btn-subsidiary" id="add-room">+添加房间</button>
+							 <button type="button" class="btn btn-subsidiary" id="add-floor">+添加楼层</button>
 							</span>
 						</div>
 				  </div>
