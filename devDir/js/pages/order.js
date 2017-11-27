@@ -1,6 +1,6 @@
 require.config(Hotel.requireConfig);
 
-define(["dropdownSelect","jeDate"],function(dropdownSelect){
+define(["ajaxSub","dropdownSelect","jeDate"],function(ajaxSub,dropdownSelect){
 
     dropdownSelect($("#dropdown-status"));
     $("#createOrder").jeDate({

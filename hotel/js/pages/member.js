@@ -1,6 +1,6 @@
 require.config(Hotel.requireConfig);
 
-define(["dropdownSelect","bsDialog","jeDate"],function(dropdownSelect,bsDialog){
+define(["ajaxSub","dropdownSelect","bsDialog","jeDate"],function(ajaxSub,dropdownSelect,bsDialog){
   
   //下拉选择
   dropdownSelect($("#dropdown-level"));

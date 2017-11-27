@@ -439,6 +439,34 @@
                     }
             }
         }(),
+        AjaxJson: (function() {
+        function AjaxJson(form) {
+          this.data = {}
+
+          if( null != form ) {
+            // 如果为object
+            if( Object.prototype.toString.call(form)=='[object Object]' ) {
+              $.extend( this.data, form )
+            }else {
+              $.extend(this.data, Cms.serializeObject($(form)) )
+            }
+          }
+        }
+        AjaxJson.prototype = {
+          constructor: AjaxJson,
+          append: function(key, value) {
+            key && value && (this.data[key] = value)
+          },
+          delete: function(key) {
+            key && delete this.data[key]
+          },
+          getData: function() {
+            return this.data
+          },
+        }
+
+        return AjaxJson
+      }()),
         // 获取浏览器类型及型号
         browser: (function( ua ) {
           var ret = {},

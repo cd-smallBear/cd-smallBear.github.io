@@ -1,6 +1,6 @@
 require.config(Hotel.requireConfig);
 
-define(["dropdownSelect","bsDialog","webuploader.setting"],function(dropdownSelect,bsDialog,upload){
+define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(ajaxSub,dropdownSelect,bsDialog,upload){
     
     dropdownSelect($("#search"));
     
