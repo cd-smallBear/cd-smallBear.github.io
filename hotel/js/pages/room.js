@@ -26,6 +26,7 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
             class:"btn btn-primary",
             action:function(dialog){
               //do something example: submit formData
+              alert("do something")
             }
           }
         ]
@@ -35,6 +36,31 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
     //添加楼层
     $("#add-floor").click(function(){
       bsDialog.ajaxPage("添加楼层",HotelConfig.root + "/forms/dialog-addFloor.html",function($element,dialog){
+        //添加删除事件
+        $element.on("click",".delete",function(){
+           alert("do something")
+        });
+
+      },{
+        classes : "modal-wid600",
+        buttons:[
+          {
+            label:"取消"
+          },{
+            label:"添加",
+            closable:false,
+            class:"btn btn-primary",
+            action:function(dialog){
+              //do something example: submit formData
+            }
+          }
+        ]
+      })
+    });
+
+    //添加房型
+    $("#add-roomCate").click(function(){
+      bsDialog.ajaxPage("添加房型",HotelConfig.root + "/forms/dialog-addRoomCate.html",function($element,dialog){
         //添加删除事件
         $element.on("click",".delete",function(){
            alert("do something")

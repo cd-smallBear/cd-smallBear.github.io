@@ -334,8 +334,8 @@ define(["webuploader","bsDialog"],function(WebUploader,bsDialog){
         }
         options = $.extend({},uploadOptions, options || {});
 
-        if (!this.inited) {
-          this.inited = true;
+        if (!pubInterface.inited) {
+          pubInterface.inited = true;
           $(options.wrap || document).on("click", ".upload-remove", function(e) {
             removeImage(this);
           });
