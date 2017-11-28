@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html {% if htmlClass %}class="{{ htmlClass }}"{% endif %}>
+<html {% if htmlClass %}class="{{ htmlClass }}"{% endif %} lang="zh-hans">
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}{% block title %}{% endblock %}</title>
