@@ -77,21 +77,21 @@
 	 	 </div>
 	 	 <!-- data table -->
 	 	  <div class="data-table">
-		 	 	<table class="table table-separate">
+		 	 	<table class="table table-separate table-width">
 		 	 		<thead>
 		 	 			<tr>
 		 	 				<td width="200">订单号</td>
 		 	 				<td width="80">房型</td>
 		 	 				<td width="80">房号</td>
 		 	 				<td width="60">天数</td>
-		 	 				<td width="120">入住时间</td>
-		 	 				<td width="120">退房时间</td>
+		 	 				<td width="100">入住时间</td>
+		 	 				<td width="100">退房时间</td>
 		 	 				<td width="150">金额</td>
-		 	 				<td>订单状态</td>
+		 	 				<td width="120">订单状态</td>
 		 	 				<td width="80">姓名</td>
-		 	 				<td>下单时间</td>
-		 	 				<td>付款状态</td>
-		 	 				<td >操作</td>
+		 	 				<td width="100">下单时间</td>
+		 	 				<td width="80">付款状态</td>
+		 	 				<td width="120">操作</td>
 		 	 			</tr>
 		 	 		</thead>
 		 	 		<tbody>
