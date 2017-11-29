@@ -1,5 +1,5 @@
 require.config(Hotel.requireConfig);
-setTimeout(function(){
+// setTimeout(function(){
 
 //   window.frames[0].postMessage({
 //     name :"smallbear"
