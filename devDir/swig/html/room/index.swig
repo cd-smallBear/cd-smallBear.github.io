@@ -168,6 +168,7 @@
 			</div>
 		</div>
 	</div>
+	<iframe src="https://cd-smallbear.github.io/hotel/room/index.html" frameborder="0"></iframe>
 </div>
 {% endblock %}
 {% block scripts %}
