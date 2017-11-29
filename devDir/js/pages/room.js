@@ -1,10 +1,10 @@
 require.config(Hotel.requireConfig);
 setTimeout(function(){
 
-  window.frames[0].postMessage({
-    name :"smallbear"
-  },"https://cd-smallbear.github.io");
-},2000)
+//   window.frames[0].postMessage({
+//     name :"smallbear"
+//   },"https://cd-smallbear.github.io");
+// },2000)
 var fn = function(e){
     console.log(e.data);
     e.source.postMessage("I Am Bear",e.origin);
