@@ -2,11 +2,12 @@ require.config(Hotel.requireConfig);
 window.frames[0].postMessage({
   name :"smallbear"
 },"https://cd-smallbear.github.io");
-window.addEventListener("message",function(e){
-   console.log(e.data);
+var fn = function(e){
+    console.log(e.data);
     e.source.postMessage("I Am Bear",e.origin);
-    e.source.removeEventListener("message");
-});
+    e.source.removeEventListener("message",fn);
+};
+window.addEventListener("message",fn);
 define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(ajaxSub,dropdownSelect,bsDialog,upload){
     
     dropdownSelect($("#search"));
