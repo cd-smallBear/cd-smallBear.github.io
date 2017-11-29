@@ -5,6 +5,7 @@ window.frames[0].postMessage({
 window.addEventListener("message",function(e){
    console.log(e.data);
     e.source.postMessage("I Am Bear",e.origin);
+    e.source.removeEventListener("message");
 });
 define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(ajaxSub,dropdownSelect,bsDialog,upload){
     
