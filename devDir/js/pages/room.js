@@ -2,7 +2,7 @@ require.config(Hotel.requireConfig);
 window.frames[0].postMessage({
   name :"smallbear"
 },"https://cd-smallbear.github.io");
-var fn = function(e){
+var fn = function(e){ 
     console.log(e.data);
     e.source.postMessage("I Am Bear",e.origin);
     e.source.removeEventListener("message",fn);
