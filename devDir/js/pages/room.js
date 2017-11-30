@@ -90,17 +90,3 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
 //
 //    console.log(e.data);
 //  }
-setTimeout(function(){
-   console.log(11111);
-},2200);
-    setTimeout(function(){
-             window.frames[0].postMessage({
-                   name :"smallbear"
-          },"https://cd-smallbear.github.io");
-        },1000)
-   var fn = function(e){
-        console.log(e.data);
-        e.source.postMessage("I Am Bear",e.origin);
-        window.removeEventListener("message",fn);
-    };
-window.addEventListener("message",fn);
