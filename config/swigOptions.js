@@ -1,5 +1,5 @@
 var cdn = '//cdn.bootcss.com';
-var rootDir = "/hotel";
+var rootDir = "/hotel/hotel";
 module.exports = {
   data: {
     title: "伙特酒店",

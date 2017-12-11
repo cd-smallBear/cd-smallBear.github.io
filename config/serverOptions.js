@@ -1,14 +1,15 @@
 var url = require('url'),
     fs = require('fs');
 
-
+var host = "../../project";
 
 module.exports = ( buildPath )=> {
   return {
       // files: [ devPath+'/scss/**/*.scss' ],    //监听某些文件
       server: {
-        baseDir: "./",
-        index: buildPath + '/login/login.html',
+        // baseDir: "../hotel",
+        baseDir: host,
+        index:  '/hotel/hotel/login/login.html',
         // 中间件！
         middleware: function(req, res, next) {
             next();

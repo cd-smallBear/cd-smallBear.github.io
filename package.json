@@ -23,6 +23,7 @@
     "gulp-swig": "^0.8.0",
     "gulp-uglify": "^3.0.0",
     "gulp.spritesmith": "^6.5.1",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.11.0"
   }
 }

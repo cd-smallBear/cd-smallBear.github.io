@@ -14,9 +14,9 @@
 {% block main %}
 <div class="account-box login-pane">
 	<div class="login-inner">
-		<h1>{{title}}</h1><a href="/room/index.html" target="_blank">admin</a>
+		<h1>{{title}}</h1><a href="{{rootDir + '/room/index.html'}}" target="_blank">admin</a>
 		<span class="checkOut">
-			<a href="/login/loginAdmin.html">
+			<a href="{{rootDir + '/login/loginAdmin.html'}}">
 			<i class="iconfont-exit"></i>
 			</a>
 		</span>

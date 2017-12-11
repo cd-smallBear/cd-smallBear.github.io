@@ -1,6 +1,6 @@
 (function () {
  var HotelConfig = window.HotelConfig = {
-        root : "/hotel",
+        root : "/hotel/hotel",
         JsVersion : 1
      }
     var Hotel = window.Hotel = {
