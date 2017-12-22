@@ -27,7 +27,8 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
                         //do something example: submit formData
                         var form = dialog.$body.find("form");
                         console.log(form.serialize()) //可上传表单数据
-                        alert("do something")
+                        //Hotel.serializeObject(form)  form值对象 , checkbox 默认值为 on  多的选择值会转成数组
+                        alert(form.serialize())
                     }
                 }
             ]

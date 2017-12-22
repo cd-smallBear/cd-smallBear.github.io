@@ -45,31 +45,31 @@
 			<div class="offset-sm-input">
 				<span class="meeting-item">
 					<span class="ui-checkbox">
-						<input type="checkbox" name="metting" class="ui-checkbox-normal" id="metting-id1">
-						<label for="metting-id1" class="ui-checkbox-emulation"></label>
+						<input type="checkbox" name="meeting" class="ui-checkbox-normal" id="meeting-id1">
+						<label for="meeting-id1" class="ui-checkbox-emulation"></label>
 					</span>
-					<label for="metting-id1" class="ui-label">会议室一</label>
+					<label for="meeting-id1" class="ui-label">会议室一</label>
 				</span>
 				<span class="meeting-item">
 					<span class="ui-checkbox">
-						<input type="checkbox" name="metting" class="ui-checkbox-normal" id="metting-id2">
-						<label for="metting-id2" class="ui-checkbox-emulation"></label>
+						<input type="checkbox" name="meeting" class="ui-checkbox-normal" id="meeting-id2">
+						<label for="meeting-id2" class="ui-checkbox-emulation"></label>
 					</span>
-					<label for="metting-id2" class="ui-label">会议室二</label>
+					<label for="meeting-id2" class="ui-label">会议室二</label>
 				</span>
 				<span class="meeting-item">
 					<span class="ui-checkbox">
-						<input type="checkbox" name="metting" class="ui-checkbox-normal" id="metting-id3">
-						<label for="metting-id3" class="ui-checkbox-emulation"></label>
+						<input type="checkbox" name="meeting" class="ui-checkbox-normal" id="meeting-id3">
+						<label for="meeting-id3" class="ui-checkbox-emulation"></label>
 					</span>
-					<label for="metting-id3" class="ui-label">会议室三</label>
+					<label for="meeting-id3" class="ui-label">会议室三</label>
 				</span>
 				<span class="meeting-item">
 					<span class="ui-checkbox">
-						<input type="checkbox" name="metting" class="ui-checkbox-normal" id="metting-id4">
-						<label for="metting-id4" class="ui-checkbox-emulation"></label>
+						<input type="checkbox" name="meeting" class="ui-checkbox-normal" id="meeting-id4">
+						<label for="meeting-id4" class="ui-checkbox-emulation"></label>
 					</span>
-					<label for="metting-id4" class="ui-label">会议室四</label>
+					<label for="meeting-id4" class="ui-label">会议室四</label>
 				</span>
 			</div>
 		</div>
