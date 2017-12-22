@@ -48,7 +48,7 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$gray-lighter2:             #eceeef;       // create @tag
+$gray-lightest2:             #e1e1e1;       // create @wangxiong
 
 $brand-primary:             #0275d8 !default;
 $brand-success:             #5cb85c !default;
@@ -330,7 +330,7 @@ $input-padding-y:                .5rem !default;
 $input-line-height:              1.25 !default;
 
 $input-bg:                       #fff !default;
-$input-bg-disabled:              $gray-lighter2 !default;
+$input-bg-disabled:              $gray-lightest2 !default;
 
 $input-color:                    $gray !default;
 $input-border-color:             $box-border-color !default;    // change @tag
@@ -362,7 +362,7 @@ $input-height-sm:                (($font-size-sm * $line-height-sm) + ($input-pa
 
 $form-group-margin-bottom:       1rem !default; //$spacer-y +  change @wangxiong
 
-$input-group-addon-bg:           $gray-lighter2 !default;
+$input-group-addon-bg:           $gray-lightest2 !default;
 $input-group-addon-border-color: $input-border-color !default;
 
 $cursor-disabled:                not-allowed !default;
@@ -534,7 +534,7 @@ $navbar-light-toggler-border:       rgba(0,0,0,.1) !default;
 
 // Navs
 
-$nav-item-margin:               0 !default;              // change @tag
+$nav-item-margin:               1rem !default;              // change @tag
 $nav-item-inline-spacer:        1rem !default;
 $nav-link-padding:              .5em 1em !default;
 $nav-link-hover-bg:             $gray-lighter !default;
@@ -576,7 +576,7 @@ $pagination-border-width:              $border-width !default;
 $pagination-border-color:              #ddd !default;
 
 $pagination-hover-color:               $link-color !default; // change @tag
-$pagination-hover-bg:                  $gray-lighter2 !default;     // change @tag
+$pagination-hover-bg:                  $gray-lightest2 !default;     // change @tag
 $pagination-hover-border:              #ddd !default;
 
 $pagination-active-color:              $brand-primary !default; // change @tag
@@ -779,7 +779,7 @@ $list-group-active-border:      $list-group-active-bg !default;
 $list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
 
 $list-group-disabled-color:      $gray-light !default;
-$list-group-disabled-bg:         $gray-lighter2 !default;
+$list-group-disabled-bg:         $gray-lightest2 !default;
 $list-group-disabled-text-color: $list-group-disabled-color !default;
 
 $list-group-link-color:         #555 !default;
@@ -889,7 +889,6 @@ $renderBgColorList: (
   '.bg-magenta': #852b99,
   '.bg-yellow': #ffb848,
   '.bg-red': #e45050,
-  '.bg-red2': #E93E5A,
   '.bg-darkred': #a40000,
   '.bg-darkblue': #4b8df8,
   '.bg-darkyellow': #ff864a,

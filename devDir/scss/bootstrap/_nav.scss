@@ -54,8 +54,8 @@
   .nav-item {
     float: left;
     // Make the list-items overlay the bottom border
-    margin-bottom: -$nav-tabs-border-width;
-    margin-right:-1px;  // add @wagnxiong
+  //  margin-bottom: -$nav-tabs-border-width;
+    //margin-right:-1px;  // add @wagnxiong
     + .nav-item {
       margin-left: $nav-item-margin;
     }
@@ -65,14 +65,19 @@
     display: block;
     padding: $nav-link-padding;
     border: $nav-tabs-border-width solid $box-border-color; // transparent;
-    // @include border-top-radius($nav-tabs-border-radius); remove @tag
-
+    border-bottom:0 none;
+    @include border-top-radius($nav-tabs-border-radius);
+    background: $gray-lightest2;
     @include hover-focus {
       // border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
       position:relative;  // add @wagnxiong
-      color: #fff;
-      background-color: $brand-primary;  //change @wangxiong
-      border-color: $brand-primary;
+      //color: #fff;
+      //background-color: $brand-primary;  //change @wangxiong
+      //border-color: $brand-primary;
+
+      color: $nav-tabs-active-link-hover-color;
+      background-color: #fff;  //change @wangxiong
+      border-color: #fff;
     }
 
     &.disabled {
@@ -88,11 +93,13 @@
   .nav-item.open .nav-link {
     @include plain-hover-focus {
       position:relative;  // add @wagnxiong
-      // color: $nav-tabs-active-link-hover-color;
-      color: #fff;   //change @wangxiong
+       color: $nav-tabs-active-link-hover-color;
+      //color: #fff;   //change @wangxiong
       // background-color: $nav-tabs-active-link-hover-bg;
-      background-color: $brand-primary;  //change @wangxiong
-      border-color: $brand-primary;
+      //background-color: $brand-primary;  //change @wangxiong
+      background-color: #fff;  //change @wangxiong
+      //border-color: $brand-primary;
+      border-color: #fff;
       // border-color: $nav-tabs-active-link-hover-border-color $nav-tabs-active-link-hover-border-color transparent;
     }
   }
@@ -156,10 +163,10 @@
 
 // Hide tabbable panes to start, show them when `.active`
 .tab-content {
-  &-extra{
-    border: 1px solid $box-border-color;
-    padding: 1rem;
-  }
+  //&-extra{
+  //  border: 1px solid $box-border-color;
+  //  padding: 1rem;
+  //}
 
   > .tab-pane {
     display: none;
@@ -168,10 +175,10 @@
     display: block;
   }
 
-  .data-table {
-    margin-left: -$font-size-root - 1px;
-    margin-right: -$font-size-root - 1px;
-  }
+  //.data-table {
+  //  margin-left: -$font-size-root - 1px;
+  //  margin-right: -$font-size-root - 1px;
+  //}
   .fixed-table-pagination {
     margin-left: .5rem;
   }

@@ -3,6 +3,7 @@
 
     >.select-txt{
       padding-right:20px;
+      cursor : pointer;
       background:#fff;
       &:focus{
         &~ .dropdown-menu {

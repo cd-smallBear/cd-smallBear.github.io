@@ -1,4 +1,4 @@
-{% set target ="订单详情" %}
+{% set target ="订单管理" %}
 {% set selectedMenu = {caption:'订单管理'} %}
 
 {% extends "../../layout/_layout-admin.swig" %}
@@ -159,7 +159,7 @@
 			 	 			</td>
 			 	 			<td>
 			 	 				<span class="text-subsidiary">取消</span>
-			 	 				<a href="/order/details.html" class="text-success">查看</a>
+			 	 				<a href="{{rootDir}}/order/details.html" class="text-success">查看</a>
 			 	 				<span class="text-danger">申请退款</span>
 			 	 			</td>
 			 	 		</tr>

@@ -32,6 +32,7 @@
 
 // 使子原素上下居中
 %children-middle {
+  white-space: nowrap;
   &:after {
     content: '';
     display: inline-block;

@@ -48,7 +48,6 @@ module.exports = ( devPath, buildPath, distPath )=> {
       .pipe(csscomb())
       .pipe( gulp.dest( buildPath + '/css' ) )
   })
-
   /**
    * 编译 swig
    * @method gulpSwig
@@ -62,7 +61,7 @@ module.exports = ( devPath, buildPath, distPath )=> {
     return gulp.src( pathOb.src )
       .pipe( swig( swigOptions ) )
       .pipe( gulp.dest( pathOb.build ) )
-      .pipe( browserSync.reload({stream: true}) )
+      .pipe( browserSync.reload({stream : true})  )
   }
   gulp.task( 'swig', ()=> {
     return gulpSwig()

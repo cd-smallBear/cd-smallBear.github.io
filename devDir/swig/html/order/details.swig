@@ -1,4 +1,4 @@
-{% set target ="订单管理" %}
+{% set target ="订单详情" %}
 {% set selectedMenu = {caption:'订单管理'} %}
 
 {% extends "../../layout/_layout-admin.swig" %}

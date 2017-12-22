@@ -1,4 +1,4 @@
-<script src="../../../../hotel/js/pages/webWorker.js"></script>{% set target ="房态管理" %}
+{% set target ="房态管理" %}
 {% set selectedMenu = {caption:'房态管理'} %}
 
 {% extends "../../layout/_layout-admin.swig" %}
@@ -168,10 +168,8 @@
 			</div>
 		</div>
 	</div>
-	<!--<iframe src="https://cd-smallbear.github.io/hotel/room/index.html" frameborder="0"></iframe>-->
 </div>
 {% endblock %}
 {% block scripts %}
 <script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'room.js'}}"></script>
-
 {% endblock %}

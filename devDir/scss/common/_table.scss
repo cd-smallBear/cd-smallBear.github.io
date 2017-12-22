@@ -42,7 +42,8 @@
 .table-head{
   thead{
     th,td{
-      background:$box-border-gray;
+      //background:$box-border-gray;
+      @include border(bottom);
     }
   }
   tr{
@@ -91,3 +92,13 @@
 
 }
 
+.img-wrap{
+  display:inline-block;
+  width:120px;
+  height:80px;
+  @extend %children-middle;
+  img{
+    max-width:100%;
+    max-height:100%;
+  }
+}

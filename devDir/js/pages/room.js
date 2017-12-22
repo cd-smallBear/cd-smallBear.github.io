@@ -11,7 +11,7 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
         //初始图片上传
         upload({
           uploadbtn : $element.find("#uploadRoomImage"),
-          wrap      : $element,
+          imgswrap  : $element.find("#uploadRoomImageContainer"),
           fileNumLimit : 2
         });
       },{
