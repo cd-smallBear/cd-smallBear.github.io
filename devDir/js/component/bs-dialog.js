@@ -21,25 +21,23 @@
     this.initSet( _opt )
 
     this.modal = new Modal( this.$modal[0], {
-        backdrop: 'static',   // 关闭backdrop处点击关闭的功能
+        backdrop: opt.backdrop != undefined ? opt.backdrop : 'static',    // 关闭backdrop处点击关闭的功能
         keyboard: false,
         show: false,
     } )
   }
 
   // static field
-  BootstrapDialog.NAMESPACE = 'bootstrap-dialog'
-  BootstrapDialog.TYPE_DEFAULT = 'type-default'
-  BootstrapDialog.TYPE_INFO = 'type-info'
-  BootstrapDialog.TYPE_PRIMARY = 'type-primary'
-  BootstrapDialog.TYPE_SUCCESS = 'type-success'
-  BootstrapDialog.TYPE_WARNING = 'type-warning'
-  BootstrapDialog.TYPE_DANGER = 'type-danger'
-    
-  BootstrapDialog.TYPE_ERROR = 'type-error'
-
+  BootstrapDialog.NAMESPACE     = 'bootstrap-dialog'
+  BootstrapDialog.TYPE_DEFAULT  = 'type-default'
+  BootstrapDialog.TYPE_INFO     = 'type-info'
+  BootstrapDialog.TYPE_PRIMARY  = 'type-primary'
+  BootstrapDialog.TYPE_SUCCESS  = 'type-success'
+  BootstrapDialog.TYPE_WARNING  = 'type-warning'
+  BootstrapDialog.TYPE_DANGER   = 'type-danger'
+  BootstrapDialog.TYPE_ERROR    = 'type-error'
   BootstrapDialog.CLASS_ANIMATE = 'fade'
-  BootstrapDialog.CLASS_SPIN ='ui-spin'
+  BootstrapDialog.CLASS_SPIN    = 'ui-spin'
 
   // 模板
   BootstrapDialog.TPL_TITLE = '<span class="'+ BootstrapDialog.NAMESPACE +'-title">{title}</span>'
@@ -75,20 +73,29 @@
     return new BootstrapDialog( opt ).open()
   }
   BootstrapDialog.alert = function( tit, msg, type, _opt ) {
-    _opt = $.extend( {}, _opt )
-
+    var classes;
     if($.isPlainObject(type)){
       _opt = type;
       type = BootstrapDialog.TYPE_SUCCESS;
     }
-
-    return new BootstrapDialog({
-      title: tit || '成功！',
-      msg  : msg,
-      type : type || BootstrapDialog.TYPE_SUCCESS,
-      timeout: _opt.timeout || 1500,
-      classes: 'bootstrap-alert ' + (_opt.classes ? _opt.classes : '')
-    } ).open();
+    if(_opt && _opt.classes){
+      classes = _opt.classes;
+      delete _opt.classes;
+    }
+  
+    _opt = $.extend( {
+      title : '操作提示',
+      msg   : msg,
+      type  : BootstrapDialog.TYPE_SUCCESS,
+      timeout: 1500,
+      classes: 'bootstrap-alert'
+    }, _opt||{} );
+    
+    if(classes){
+      _opt.classes += " " + classes;
+    }
+    
+    return new BootstrapDialog(_opt).open();
   };
   BootstrapDialog.confirm = function( tit, msg, callback, _opt ) {
     var opt = $.extend( {}, {

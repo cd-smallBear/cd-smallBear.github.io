@@ -120,9 +120,24 @@
   }
   .subnav{
     li{
-      @include border(top,$style:dashed);
-      &:first-child{
-        @include border(top,$none:true);
+      // @include border(top,$style:dashed);
+      // &:first-child{
+      //   @include border(top,$none:true);
+      // }
+      &:hover{
+        & + li{
+          &:before{
+            border-color: transparent;
+          }
+        }
+      }
+      & + li{
+        &:before{
+          content:"";
+          display: block;
+          margin:0 .5rem -1px .5rem;
+          @include border(top,$style:dashed);
+        }
       }
     }
     a {

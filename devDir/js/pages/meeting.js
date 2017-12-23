@@ -53,7 +53,9 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
             selectedList.push(this.getAttribute("data-id"));
         });
         if(selectedList.length){
-            dialog.alert("操作提示",selectedList.toString());
+            dialog.alert("操作提示",selectedList.toString(),{
+                backdrop:false
+            });
         }else{
             dialog.alert("操作提示","一个都没选","type-danger");
         }

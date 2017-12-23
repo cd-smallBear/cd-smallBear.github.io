@@ -19,8 +19,8 @@ define(["webuploader","bsDialog"],function(WebUploader,bsDialog){
         imgswrap    : null,   //JQ DOM
         hideNodeName: '', //隐藏域值存的 ID
         multiple    : false,  //  一个按钮存隐藏域多个值
-        swfUrl      : Hotel.root + '/js/lib/webuploader/Uploader.swf',
-        serverUrl   : Hotel.root + '/attachment/upload',//uploadAndThumbnail
+        swfUrl      : HotelConfig.root + '/js/lib/webuploader/Uploader.swf',
+        serverUrl   : HotelConfig.root + '/attachment/upload',//uploadAndThumbnail
         fileNumLimit: undefined,
         resImgPathUrl: 'https://s3.cn-north-1.amazonaws.com.cn/test.temp-store/',
         beforeFileQueued:null,//上传前回调
@@ -49,7 +49,8 @@ define(["webuploader","bsDialog"],function(WebUploader,bsDialog){
             msg     : error || '上传失败',//reason
             type    : "type-error",
             timeout : 1500,
-            classes:"bootstrap-alert modal-warning"
+            classes : "bootstrap-alert modal-warning modal-no-backdrop",
+            backdrop: false
         });
     }
     function initImageUploader(uploadOptions) {
@@ -120,8 +121,9 @@ define(["webuploader","bsDialog"],function(WebUploader,bsDialog){
                     var dialog = bsDialog.show({
                         title: '上传提示',
                         msg  : '上传图片数量不超过' + uploadOptions.fileNumLimit + '张!',
-
-                        classes: 'bootstrap-alert modal-warning'
+                        type : "type-danger",
+                        classes : 'bootstrap-alert modal-warning modal-no-backdrop',
+                        backdrop: false
                     });
                     dialog.$modal.on("hidden.bs.modal",function(){
                         uploadOptions.uploadLimit = false;

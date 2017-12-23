@@ -17,7 +17,6 @@ $modal-type-default:         $box-border-gray;
 @include renderModal( 'primary', $brand-primary, #fff);
 @include renderModal( 'danger', $brand-danger, #fff);
 @include renderModal( 'warning', $brand-warning, #fff);
-
 @include renderModal( 'error',  $brand-danger, #fff);
 
 
@@ -38,29 +37,33 @@ $modal-type-default:         $box-border-gray;
     }
   }
 }
-
-// 文档modal的首行缩进二字符
-.word-modal {
-  p {
-    text-indent: 2rem;
+//modal-no-backdrop
+.modal-no-backdrop{
+  .modal-header{
+    @include border(bottom,$none:true);
+  }
+  .modal-body {
+    @include border();
+    @include border(top,$none:true);
+    @include border-bottom-radius($border-radius-lg); 
+  }
+} 
+// modal-status-type 
+.bootstrap-alert {
+  .modal-dialog {
+    width: 18.75rem;
+    //margin-top: 1.5rem !important;
+    //vertical-align: top;
+    .modal-body{
+      padding: 2rem 1rem;
+    }
   }
 }
-
-
 .bootstrap-confirm {
   .modal-dialog {
     width: map-get($grid-breakpoints, sm);
   }
 }
-
-.bootstrap-alert {
-  .modal-dialog {
-    //vertical-align: top;
-    width: 18.75rem;
-    //margin-top: 1.5rem !important;
-  }
-}
-
 .bs-dialog-form {
   .modal-dialog {
     width: map-get($grid-breakpoints, lg);
@@ -91,8 +94,6 @@ $modal-type-default:         $box-border-gray;
 //dialog弹出窗口状态
 %modal{
   .modal-body {
-    padding: 2rem 1rem;
-
     &:before {
       content:"";
       @extend %ui-state;
@@ -103,15 +104,12 @@ $modal-type-default:         $box-border-gray;
 $dialog-popup-state : ('warning':300px,'success': 300px,'error': 300px);
 @each $key,$value in $dialog-popup-state{
   .modal-#{$key} {
-    //.modal-dialog {
-    //  width: $value;
-    //}
+ 
     @extend %modal;
     .modal-body {
       &:before {
         background-position:map-get($coordinate, $key);
       }
-
     }
   }
 
