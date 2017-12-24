@@ -124,8 +124,8 @@
       // &:first-child{
       //   @include border(top,$none:true);
       // }
-      &:hover{
-        & + li{
+      &.active,&:hover{
+        & + li {
           &:before{
             border-color: transparent;
           }
@@ -140,6 +140,7 @@
         }
       }
     }
+
     a {
       //color: $sub-color;
       padding: .5rem 1rem;

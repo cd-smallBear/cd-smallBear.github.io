@@ -62,6 +62,9 @@ $modal-type-default:         $box-border-gray;
 .bootstrap-confirm {
   .modal-dialog {
     width: map-get($grid-breakpoints, sm);
+    .modal-body{
+      padding: 2rem 1rem;
+    }
   }
 }
 .bs-dialog-form {

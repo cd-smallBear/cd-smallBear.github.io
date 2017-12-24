@@ -1,19 +1,217 @@
-{% set target ="配置管理" %}
-{% set selectedMenu = {caption:'会议管理',child : '配置管理'} %}
+<!DOCTYPE html>
+<html  lang="zh-hans">
+<head>
+	<meta charset="UTF-8">
+	<title>伙特酒店-预定管理</title>
 
-{% extends "../../layout/_layout-admin.swig" %}
+	
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	
+    <link rel="stylesheet" href="/hotel/hotel/css/common.css">
+<link rel="stylesheet" href="/hotel/hotel/css/admin.css">
+<link rel="stylesheet" href="/hotel/hotel/css/pages/meeting.css">
 
+</head>
+<body >
+	
+	
+    <div class="g-main">
+	    
+  <div class="g-aside">
+  <div class="hotel">
+    <h1 class="hotel-name">伙特酒店</h1>
+    <p class="text-sm-center"><span class="user">操作员：张三</span></p>
+    <ol class="nav">
+      <li>
+        <a href="" class="message" title="消息"><i class="iconfont-message"></i></a>
+        <span>班次：早班</span>
+      </li>
+      <li>
+        <span class="time float-sm-right">02:58</span>
+        <span class="date">2017/11/25</span>
+      </li>
+    </ol>
+  </div>
+  
+<aside class="aside-menu">
+  <ul class="nav">
+    
+    
+    <li class="menu-item" >
+      
+      
 
-{% block title -%}
-{% parent %}-{{target}}
-{%- endblock %}
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/room/index.html">
+        <i class="aside-icon iconfont-room"></i>房态管理
+        
+      </a>
 
-{%- block style %}
-<link rel="stylesheet" href="{{css.root + 'admin.css'}}">
-<link rel="stylesheet" href="{{css.pages + 'meeting.css'}}">
-{% endblock -%}
+      
+    </li>
+    
+    
+    <li class="menu-item" >
+      
+      
 
-{% block content %}
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/order/index.html">
+        <i class="aside-icon iconfont-order"></i>订单管理
+        
+      </a>
+
+      
+    </li>
+    
+    
+    <li class="menu-item" >
+      
+      
+
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/member/index.html">
+        <i class="aside-icon iconfont-member"></i>会员查询
+        
+      </a>
+
+      
+    </li>
+    
+    
+    <li class="menu-item" >
+      
+      
+
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/sale">
+        <i class="aside-icon iconfont-sale"></i>营销中心
+        
+      </a>
+
+      
+    </li>
+    
+    
+    <li class="menu-item" >
+      
+      
+
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/food">
+        <i class="aside-icon iconfont-catering"></i>餐饮管理
+        
+      </a>
+
+      
+    </li>
+    
+    
+    <li class="menu-item active" >
+      
+      
+        
+      
+        
+      
+        
+      
+
+      
+        
+      
+      <a href="javascript:;">
+        <i class="aside-icon iconfont-meeting"></i>会议管理
+        
+        <i class="aside-icon-arrow iconfont-arrow-left"></i>
+        
+      </a>
+
+      
+      <div class="subnav">
+        <h3>会议室</h3>
+        <ul class="nav">
+          
+          <li >
+            <a href="/hotel/hotel/meeting/index.html">会议室管理</a>
+          </li>
+          
+          <li >
+            <a href="/hotel/hotel/meeting/setting.html">配置管理</a>
+          </li>
+          
+          <li  class="active" >
+            <a href="/hotel/hotel/meeting/book.html">预定管理</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </li>
+    
+    
+    <li class="menu-item" >
+      
+      
+
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/performance">
+        <i class="aside-icon iconfont-chart"></i>业绩报表
+        
+      </a>
+
+      
+    </li>
+    
+    
+    <li class="menu-item" >
+      
+      
+
+      
+        
+           
+        
+      
+      <a href="/hotel/hotel/home">
+        <i class="aside-icon iconfont-home"></i>官网管理
+        
+      </a>
+
+      
+    </li>
+    
+  </ul>
+</aside>
+
+</div>
+  
 <div class="g-content">
 	<div class="meeting-panel">
 		<div class="search-box">
@@ -78,11 +276,15 @@
 			</div>
 		</div>
 		<!-- data table -->
-		<div class="data-operate btns mb-2">
-			<button type="button" class="btn btn-subsidiary" id="add-meeting">+增加配置</button>
-			<button type="button" class="btn btn-danger" id="removeAll">删除</button>
+		<div class="book-head">
+			<div class="book-status">
+			    <span class="enable">未预定</span>
+				<span class="disable">已预定</span>
+			</div>
+			<div class="choice-date"></div>
+			<p>2017年11月19日</p>
 		</div>
-		<div class="data-table setting-data" id="setting-data">
+		<div class="book-data data-table" id="book-data">
 			<table class="table table-head table-hover">
 				<thead>
 					<tr>
@@ -171,7 +373,17 @@
 		</div>
 	</div>
 </div>
-{% endblock %}
-{% block scripts %}
-<script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'meeting.js'}}"></script>
-{% endblock %}
+
+
+    </div>
+
+	
+	<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js" ></script>
+	<script src="//cdn.bootcss.com/tether/1.4.0/js/tether.js"></script>
+	<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.5/js/bootstrap.js" ></script>
+	<script src="/hotel/hotel/js/component/global.js" ></script>
+	
+<script src="/hotel/hotel/js/lib/require.js" data-main="/hotel/hotel/js/pages/meeting.js"></script>
+
+</body>
+</html>

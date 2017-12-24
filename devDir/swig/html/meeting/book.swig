@@ -1,5 +1,5 @@
-{% set target ="配置管理" %}
-{% set selectedMenu = {caption:'会议管理',child : '配置管理'} %}
+{% set target ="预定管理" %}
+{% set selectedMenu = {caption:'会议管理',child : '预定管理'} %}
 
 {% extends "../../layout/_layout-admin.swig" %}
 
@@ -78,11 +78,15 @@
 			</div>
 		</div>
 		<!-- data table -->
-		<div class="data-operate btns mb-2">
-			<button type="button" class="btn btn-subsidiary" id="add-meeting">+增加配置</button>
-			<button type="button" class="btn btn-danger" id="removeAll">删除</button>
+		<div class="book-head">
+			<div class="book-status">
+			    <span class="enable">未预定</span>
+				<span class="disable">已预定</span>
+			</div>
+			<div class="choice-date"></div>
+			<p>2017年11月19日</p>
 		</div>
-		<div class="data-table setting-data" id="setting-data">
+		<div class="book-data data-table" id="book-data">
 			<table class="table table-head table-hover">
 				<thead>
 					<tr>

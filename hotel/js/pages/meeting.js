@@ -53,8 +53,30 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
             selectedList.push(this.getAttribute("data-id"));
         });
         if(selectedList.length){
-            dialog.alert("操作提示",selectedList.toString(),{
-                backdrop:false
+            dialog.confirm("操作提示","确定要删除吗？，选中的id: " + selectedList.toString(),function(dialog){
+                var _this = this; // this -> 点击的jqDom
+                dialog.setClosable(false).disableBtn().spin(this);
+    
+                setTimeout(function(){
+                    var random = Math.random() * 3;
+                    if(Math.round(random) > 2){
+                        dialog.close();
+                    }else{
+                        dialog.setClosable(true).enableBtn().unspin(_this);
+                    }
+                },1000)
+                
+                // ajax({
+                //     url : "",
+                //     successCall:function(){
+                //         dialog.close();
+                //     },
+                //     failCall:function(){
+                //         dialog.setClosable(true).enableBtn().unspin();
+                //     }
+                // });
+            },{
+                autoClose :false,
             });
         }else{
             dialog.alert("操作提示","一个都没选","type-danger");
@@ -63,7 +85,31 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
     //删除某一个
     table.on("click",".del",function(){
         var id = $(this).data("id");
-        dialog.alert("id",id);
+        dialog.confirm("操作提示","确定要删除吗？，选中的id: " + id,function(dialog){
+            var _this = this; // this -> 点击的jqDom
+            dialog.setClosable(false).disableBtn().spin(this);
+
+            setTimeout(function(){
+                var random = Math.random() * 3;
+                if(Math.round(random) > 2){
+                    dialog.close();
+                }else{
+                    dialog.setClosable(true).enableBtn().unspin(_this);
+                }
+            },1000)
+            
+            // ajax({
+            //     url : "",
+            //     successCall:function(){
+            //         dialog.close();
+            //     },
+            //     failCall:function(){
+            //         dialog.setClosable(true).enableBtn().unspin();
+            //     }
+            // });
+        },{
+            autoClose :false,
+        });
 
         // ajax({
         //     url : "",
@@ -77,6 +123,38 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
         //
         //     }
         // })
+        return false;
+    });
+    //编辑
+    table.on("click",".edit",function(){
+        dialog.ajaxPage("添加会议室",HotelConfig.root + "/forms/dialog-addSetting.html?id=id12",function($element,dialog){
+            //初始图片上传
+            //tips  uploadbtn 的 data-name 属性是上传域的 name 值
+            upload({
+                uploadbtn : $element.find("#uploadSettingImage"),
+                imgswrap  : $element.find("#uploadSettingImageContainer"),
+                fileNumLimit : 1,
+                cutFileNum   :  $element.find("#uploadSettingImageContainer").children().length
+            });
+        },{
+            classes : "modal-wid1000",
+            buttons:[
+                {
+                    label:"取消"
+                },{
+                    label:"添加",
+                    closable:false,
+                    class:"btn btn-primary",
+                    action:function(dialog){
+                        //do something example: submit formData
+                        var form = dialog.$body.find("form");
+                        console.log(form.serialize()) //可上传表单数据
+                        //Hotel.serializeObject(form)  form值对象 , checkbox 默认值为 on  多的选择值会转成数组
+                        alert(form.serialize())
+                    }
+                }
+            ]
+        });
         return false;
     });
 });

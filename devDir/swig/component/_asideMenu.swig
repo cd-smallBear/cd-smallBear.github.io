@@ -17,6 +17,7 @@
   '会议管理': { icon: 'meeting', 'url': '/meeting',children: {
       '会议室管理' :  "/index.html",
       '配置管理'   :  "/setting.html",
+      '预定管理'   :  "/book.html"
   } ,title : '会议室'},
   '业绩报表': { icon: 'chart', 'url': '/performance', children: {
   

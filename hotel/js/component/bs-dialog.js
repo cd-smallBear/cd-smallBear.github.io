@@ -84,7 +84,7 @@
     }
   
     _opt = $.extend( {
-      title : '操作提示',
+      title : tit || '操作提示',
       msg   : msg,
       type  : BootstrapDialog.TYPE_SUCCESS,
       timeout: 1500,
@@ -106,12 +106,12 @@
 
     return BootstrapDialog.show({
       title: tit,
-      msg: msg,
+      msg  : msg,
+      type : BootstrapDialog.TYPE_SUCCESS,
       buttons: [
         {
           label: '取消',
           action: function( dialog ) {
-            dialog.close();    // add @tag
             opt.cancel && opt.cancel.call(this, dialog);
           }
         },
@@ -121,8 +121,8 @@
           closable: false,
           class: 'btn btn-primary',
           action: function( dialog ) {
-            opt.autoClose && dialog.close();  // add @tag
-              callback.call(this, dialog);
+            opt.autoClose && dialog.close(); 
+            callback.call(this, dialog);
           }
         }
       ],
@@ -363,7 +363,7 @@
 
       return this
     },
-    disabledBtn: function() {
+    disableBtn: function() {
       this.$modal.find('button').prop( 'disabled', true)
       return this
     },
