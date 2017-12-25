@@ -6,7 +6,7 @@ define(["ajaxSub","dropdownSelect","bsDialog"],function(ajaxSub,dropdownSelect,d
        prevBtn = $("#carouselPrev");
 
     dropdownSelect($("#search-bar"));
-    
+
    //create  date-carousel start
    var range = [9,24],current = range[0],html ="";
    while(current < range[1]){

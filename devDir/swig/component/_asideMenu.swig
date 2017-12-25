@@ -12,8 +12,10 @@
 
   } },
   '餐饮管理': { icon: 'catering', 'url': '/food', children: {
-   
-  } },
+    "订单管理" : "/index.html",
+    "菜单管理" : "/type.html",
+    "菜品仓库" : "/store.html",
+  } ,title : "餐饮"},
   '会议管理': { icon: 'meeting', 'url': '/meeting',children: {
       '会议室管理' :  "/index.html",
       '配置管理'   :  "/setting.html",

@@ -7,7 +7,7 @@ define(["ajaxSub","dropdownSelect","bsDialog","jeDate"],function(ajaxSub,dropdow
 
   //时间选择
   
-  $("#startDate").rangeJeDate($("#emdDate"));
+  $("#startDate").rangeJeDate($("#endDate"));
 
   $("#add-member").click(function(){
     bsDialog.ajaxPage("创建新会员",HotelConfig.root + "/forms/dialog-addMember.html",function($element,dialog){

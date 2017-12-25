@@ -36,7 +36,7 @@
 			 	 	 	  <div class="m-dateRange">
 				 	 	 	  <input type="text" name="startDay" class="form-control">
 				 	 	 	  <span class="time-gutter"></span>
-				 	 	 	  <input type="text" name="emdDay" class="form-control">
+				 	 	 	  <input type="text" name="endDay" class="form-control">
 			 	 	 	  </div>
 			 	 	 </div>
 		 	 	 </div>
@@ -46,7 +46,7 @@
 			 	 	 	  <div class="m-dateRange">
 				 	 	 	  <input type="text" name="startPrice" class="form-control">
 				 	 	 	  <span class="time-gutter"></span>
-				 	 	 	  <input type="text" name="emdPrice" class="form-control">
+				 	 	 	  <input type="text" name="endPrice" class="form-control">
 			 	 	 	  </div>
 			 	 	 </div>
 		 	 	 </div>
@@ -56,7 +56,7 @@
 			 	 	 	  <div class="m-dateRange">
 				 	 	 	  <input type="text" name="startDate" class="form-control" readonly id="startDate">
 				 	 	 	  <span class="time-gutter"></span>
-				 	 	 	  <input type="text" name="emdDate" class="form-control" readonly id="emdDate">
+				 	 	 	  <input type="text" name="endDate" class="form-control" readonly id="endDate">
 			 	 	 	  </div>
 			 	 	 </div>
 		 	 	 </div>
@@ -64,7 +64,7 @@
 		 	 <!-- search -->
 		 	 <div class="search mt-0 pl-1">
 		 	 	 <div class="search-item">
-			 	 	 <label for="entryStartDate" class="search-label">会员等级</label>
+			 	 	 <span class="search-label">会员等级</span>
 			 	 	 <div class="search-box">
 			 	 	 	  <div class="m-select" id="dropdown-level">
 								<input type="text" class="form-control select-txt" value="请选择" readonly data-toggle="dropdown" data-name="userLevel">
