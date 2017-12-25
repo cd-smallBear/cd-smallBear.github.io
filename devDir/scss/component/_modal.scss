@@ -15,16 +15,16 @@ $modal-type-default:         $box-border-gray;
 @include renderModal( 'default', $modal-type-default );
 @include renderModal( 'success', $brand-success,#fff);
 @include renderModal( 'primary', $brand-primary, #fff);
-@include renderModal( 'danger', $brand-danger, #fff);
+@include renderModal( 'danger',  $brand-danger, #fff);
 @include renderModal( 'warning', $brand-warning, #fff);
-@include renderModal( 'error',  $brand-danger, #fff);
+@include renderModal( 'error',   $brand-danger, #fff);
 
 
 .ui-spin {
   &:before {
     @extend %icon-font;
 
-    content: '\e900';
+    content: '\e913';
     font-size: 19px;
     display: inline-block;
     animation: spin-rotate 1s infinite linear;

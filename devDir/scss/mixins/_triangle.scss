@@ -23,6 +23,6 @@
   } @else if $direction == left {
     border-top: $size dashed transparent;
     border-bottom: $size dashed transparent;
-    border-right: $subSize solid $borderColor;
+    border-right: $size solid $borderColor;
   }
 }

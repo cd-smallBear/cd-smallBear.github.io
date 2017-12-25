@@ -46,7 +46,7 @@
       <a href="{{href}}">
         <i class="aside-icon iconfont-{{ val.icon }}"></i>{{ loop.key }}
         {% if hasChild %}
-        <i class="aside-icon-arrow iconfont-arrow-left"></i>
+        <i class="aside-icon-arrow iconfont-arrow-right"></i>
         {% endif %}
       </a>
 

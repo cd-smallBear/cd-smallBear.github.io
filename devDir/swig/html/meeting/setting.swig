@@ -77,11 +77,11 @@
 			   <button type="button" class="btn btn-primary btn-search"><i class="iconfont-search"></i>搜索</button>
 			</div>
 		</div>
-		<!-- data table -->
 		<div class="data-operate btns mb-2">
 			<button type="button" class="btn btn-subsidiary" id="add-meeting">+增加配置</button>
 			<button type="button" class="btn btn-danger" id="removeAll">删除</button>
 		</div>
+		<!-- data table -->
 		<div class="data-table setting-data" id="setting-data">
 			<table class="table table-head table-hover">
 				<thead>

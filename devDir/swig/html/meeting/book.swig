@@ -77,105 +77,87 @@
 			   <button type="button" class="btn btn-primary btn-search"><i class="iconfont-search"></i>搜索</button>
 			</div>
 		</div>
-		<!-- data table -->
-		<div class="book-head">
-			<div class="book-status">
-			    <span class="enable">未预定</span>
-				<span class="disable">已预定</span>
+		<div class="book-box">
+			<div class="book-head">
+				<div class="book-status">
+					<span class="enable"><i class="enable-badge"></i>未预定</span>
+					<span class="disable"><i class="disable-badge"></i>已预定</span>
+				</div>
+				<div class="choice-date">
+					<a href="javascript:;" class="pre"><i class="iconfont-arrow-left"></i></a>
+					<a href="javascript:;" class="next"><i class="iconfont-arrow-right"></i></a>
+				</div>
+				<p>2017年11月19日</p>
 			</div>
-			<div class="choice-date"></div>
-			<p>2017年11月19日</p>
-		</div>
-		<div class="book-data data-table" id="book-data">
-			<table class="table table-head table-hover">
-				<thead>
+			<!-- data table -->
+			<div class="book-body carousel-box">
+				<table class="table table-head">
+					<thead>
+						<tr>
+							<td width="120">会议室名称<span class="prev-arrow" id="carouselPrev"></span></td>
+							<td colspan="9">
+								<div class="carousel-gallery" id="carousel-box">
+									<div class="carousel-inner"></div>
+								</div>
+							</td>
+							<td width="50">
+								<span class="next-arrow" id="carouselNext"></span>
+							</td>
+						</tr>
+					</thead>
+					<tbody class="tbody" id="book-data">
+						<tr>
+							<td>会议室一</td>
+							<td colspan="9">
+								<div class="carousel-gallery" id="table-carousel-gallery">
+									<div class="carousel-inner"></div>
+								</div>
+							</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="m-pagination">
+					<ul class="pagination">
+						<li class="page-pre disabled"><a href="#">‹</a></li>
+						<li class="page-number active"><a href="javascript:;">1</a></li>
+						<li class="page-number"><a href="javascript:;">2</a></li>
+						<li class="page-next"><a href="javascript:;">›</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="book-head"><p>订单详情</p></div>
+			<div class="book-body order-box">
+				<table class="table">
 					<tr>
-						<td width="60">
-							<span class="ui-checkbox">
-								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-all">
-								<label for="del-all" class="ui-checkbox-emulation"></label>
-							</span>
-						</td>
-						<td width="300">名称</td>
-						<td width="220">单位</td>
-						<td width="200">数量</td>
-						<td width="200">搭配会议室</td>
-						<td width="200">赔偿金额</td>
-						<td>操作</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<span class="ui-checkbox">
-								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-id1212" data-id="id1212">
-								<label for="del-id1212" class="ui-checkbox-emulation"></label>
-							</span>
-						</td>
-						<td class="text-sm-left">会议椅子</td>
-						<td>把</td>
-						<td>20</td>
-						<td>会议室一</td>
-						<td>
-							<span class="price">80.00</span>
-						</td>
-						<td>
-							<a href="" class="btn-link edit">编辑</a>
-							<a href="javascript:;" class="btn-link text-danger del" data-id="id1212">删除</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="ui-checkbox">
-								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-id12123" data-id="id12123">
-								<label for="del-id12123" class="ui-checkbox-emulation"></label>
-							</span>
-						</td>
-						<td class="text-sm-left">会议椅子</td>
-						<td>把</td>
-						<td>20</td>
-						<td>会议室一</td>
-						<td>
-							<span class="price">80.00</span>
-						</td>
-						<td>
-							<a href="" class="btn-link edit">编辑</a>
-							<a href="javascript:;" class="btn-link text-danger del" data-id="id1213">删除</a>
-						</td>
+						<td>预订号：顶替顶替李春雷虽</td>
+						<td>会议室名称：辊奈</td>
+						<td>预约价格：1200.00/天</td>
+						<td>预约时期：2017-12-25 12:00 - 13:00</td>
 					</tr>
 					<tr>
-						<td>
-							<span class="ui-checkbox">
-								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-id12124" data-id="id12124">
-								<label for="del-id12124" class="ui-checkbox-emulation"></label>
-							</span>
-						</td>
-						<td class="text-sm-left">会议椅子</td>
-						<td>把</td>
-						<td>20</td>
-						<td>会议室一</td>
-						<td>
-							<span class="price">80.00</span>
-						</td>
-						<td>
-							<a href="" class="btn-link edit">编辑</a>
-							<a href="javascript:;" class="btn-link text-danger del" data-id="id1214">删除</a>
-						</td>
+						<td>面积：130m <sup>2</sup></td>
+						<td>参会人数：20</td>
+						<td>布置方式：婚宴</td>
+						<td>LED：启用</td>
 					</tr>
-				</tbody>
-			</table>
-			<div class="m-pagination">
-				<ul class="pagination">
-					<li class="page-pre disabled"><a href="#">‹</a></li>
-					<li class="page-number active"><a href="javascript:;">1</a></li>
-					<li class="page-number"><a href="javascript:;">2</a></li>
-					<li class="page-next"><a href="javascript:;">›</a></li>
-				</ul>
+					<tr>
+						<td>预订人：张三</td>
+						<td>联系电话：15108231055</td>
+						<td>支付状态：<span class="text-success">已支付</span><span class="text-danger">未支付</span></td>
+						<td>订单状态：未筹备</td>
+					</tr>
+				</table>
+				<div class="order-operate btns">
+					<button type="button" class="btn btn-subsidiary ml-1">立即筹备</button>
+					<button type="button" class="btn btn-subsidiary">取消</button>
+					<button type="button" class="btn btn-subsidiary">删除</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 {% endblock %}
 {% block scripts %}
-<script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'meeting.js'}}"></script>
+<script src="{{js.lib.root + 'require.js'}}" data-main="{{js.pages + 'meeting-book.js'}}"></script>
 {% endblock %}
