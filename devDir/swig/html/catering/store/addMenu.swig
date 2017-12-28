@@ -57,7 +57,7 @@
 					</span>
 					<div class="openRule-box d-none" id="openRuleBox">
 						<input type="text" class="form-control" data-name="rule" id="dropdownText-Rule" readonly placeholder="请选择">
-						<a href="./rule.html" class="btn btn-outline-primary align-top">添加规格</a>
+						<a href="../store/rule.html" class="btn btn-outline-primary align-top">添加规格</a>
 					</div>
 				</div>
 			</div>

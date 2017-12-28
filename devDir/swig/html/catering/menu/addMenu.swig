@@ -47,21 +47,25 @@
 			</div>
 			<div class="form-group row">
 				<span class="offset-sm-label col-form-label label-required">销售价</span>
-				<div class="offset-sm-input radio-options">
+				<div class="offset-sm-input radio-options" id="radio-opotions-box">
 					<span class="radio-option">
 						<span class="ui-radio">
-							<input type="radio" name="rule" class="ui-radio-normal" id="price-id1212" checked>
-							<label for="price-id1212" class="ui-radio-emulation"></label>
+							<input type="radio" name="rule" class="ui-radio-normal radio" id="closeRule" checked data-active="close" data-target="openRuleBox">
+							<label for="closeRule" class="ui-radio-emulation"></label>
 						</span>
-						<label for="price-id1212" class="ui-label">单一售价</label>
+						<label for="closeRule" class="ui-label">单一售价</label>
 					</span>
 					<span class="radio-option">
 						<span class="ui-radio">
-							<input type="radio" name="rule" class="ui-radio-normal" id="price-id1213">
-							<label for="price-id1213" class="ui-radio-emulation"></label>
+							<input type="radio" name="rule" class="ui-radio-normal radio" id="openRule" data-active="open" data-target="openRuleBox">
+							<label for="openRule" class="ui-radio-emulation"></label>
 						</span>
-						<label for="price-id1213" class="ui-label">启用规格</label>
+						<label for="openRule" class="ui-label">启用规格</label>
 					</span>
+					<div class="openRule-box d-none" id="openRuleBox">
+						<input type="text" class="form-control" data-name="rule" id="dropdownText-Rule" readonly placeholder="请选择">
+						<a href="../store/rule.html" class="btn btn-outline-primary align-top">添加规格</a>
+					</div>
 				</div>
 			</div>
 			<div class="form-group row">
