@@ -13,9 +13,21 @@
   } },
   '餐饮管理': { icon: 'catering', 'url': '/food', children: {
     "订单管理" : "/index.html",
-    "菜单管理" : "/type.html",
-    "菜品仓库" : "/store.html",
-  } ,title : "餐饮"},
+    "菜单管理" : "/menu",
+    "菜品仓库" : "/store",
+  } ,title : "餐饮",subChildren : {
+       "菜单管理" : {
+        "菜品列表" : "/list.html",
+        "菜品分组" : "/group.html",
+        "菜品标签" : "/tag.html",
+       },
+      "菜品仓库" : {
+        "菜品仓库" : "/list.html",
+        "菜品规格" : "/rule.html",
+        "菜品口味" : "/taste.html",
+      }
+    }
+  },
   '会议管理': { icon: 'meeting', 'url': '/meeting',children: {
       '会议室管理' :  "/index.html",
       '配置管理'   :  "/setting.html",
@@ -57,8 +69,24 @@
         <h3>{{ val.title }}</h3>
         <ul class="nav">
           {% for url in val.children %}
-          <li {% if (selectedMenu.caption === parentLabel && loop.key === selectedMenu.child) %} class="active" {% endif %}>
-            <a href="{{ rootDir + val.url + url }}">{{ loop.key }}</a>
+          {% set childKey = loop.key %}
+          <li {% if (selectedMenu.caption === parentLabel && childKey === selectedMenu.child) %} class="active" {% endif %}>
+            <a href="{% if url.indexOf('.html') == -1 %}javascript:;{% else %}{{ rootDir + val.url + url }} {% endif %}">{{ childKey }}
+              {% if val.subChildren[childKey] %}
+              <i class="aside-icon-arrow iconfont-arrow-down"></i>
+              {% endif %}
+            </a>
+            {% if val.subChildren %}
+               {% if val.subChildren[childKey] %}
+                  <ul class="nav subnav-menu">
+                    {% for sub in val.subChildren[childKey] %}
+                    <li {% if (selectedMenu.caption === parentLabel && loop.key === selectedMenu.subChild) %} class="active" {% endif %}>
+                      <a href="{{ rootDir + val.url + url + sub }}">{{ loop.key }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+               {% endif %}
+            {% endif %}
           </li>
           {% endfor %}
         </ul>

@@ -16,7 +16,7 @@
 {% block content %}
 <div class="g-content">
 	<div class="meeting-panel">
-		<div class="search-box">
+		<div class="search-container">
 			<div class="search" id="search-bar">
 				<div class="search-item">
 					<label for="meetingName" class="search-label">名称</label>
@@ -79,7 +79,7 @@
 		</div>
 		<div class="data-operate btns mb-2">
 			<button type="button" class="btn btn-subsidiary" id="add-meeting">+增加配置</button>
-			<button type="button" class="btn btn-danger" id="removeAll">删除</button>
+			<button type="button" class="btn btn-danger" id="del-All">删除</button>
 		</div>
 		<!-- data table -->
 		<div class="data-table setting-data" id="setting-data">
@@ -88,8 +88,8 @@
 					<tr>
 						<td width="60">
 							<span class="ui-checkbox">
-								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-all">
-								<label for="del-all" class="ui-checkbox-emulation"></label>
+								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="check-all">
+								<label for="check-all" class="ui-checkbox-emulation"></label>
 							</span>
 						</td>
 						<td width="300">名称</td>

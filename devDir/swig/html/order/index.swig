@@ -124,9 +124,9 @@
 			 	 				<span class="text-subsidiary">已付款</span>
 			 	 			</td>
 			 	 			<td>
-			 	 				<span class="text-subsidiary">取消</span>
-			 	 				<a href="{{rootDir}}/order/details.html" class="text-success">查看</a>
-			 	 				<span class="text-danger">申请退款</span>
+			 	 				<span class="btn-link text-subsidiary">取消</span>
+			 	 				<a href="{{rootDir}}/order/details.html" class="btn-link">查看</a>
+			 	 				<span class="btn-link text-danger">申请退款</span>
 			 	 			</td>
 			 	 		</tr>
 			 	 		<tr>
@@ -158,9 +158,9 @@
 			 	 				<span class="text-subsidiary">已付款</span>
 			 	 			</td>
 			 	 			<td>
-			 	 				<span class="text-subsidiary">取消</span>
-			 	 				<a href="{{rootDir}}/order/details.html" class="text-success">查看</a>
-			 	 				<span class="text-danger">申请退款</span>
+			 	 				<span class="btn-link text-subsidiary">取消</span>
+			 	 				<a href="{{rootDir}}/order/details.html" class="btn-link">查看</a>
+			 	 				<span class="btn-link text-danger">申请退款</span>
 			 	 			</td>
 			 	 		</tr>
 		 	 		</tbody>

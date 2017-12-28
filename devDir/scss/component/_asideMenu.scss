@@ -43,7 +43,7 @@
   font-size: .875rem;
 
   %a-hover {
-    color: #fff!important;
+    color: #fff;
     background-color: darken($brand-primary,20%);
   }
 
@@ -81,6 +81,9 @@
      background-color: #fff;
    }
 
+   .subnav-menu{
+     margin-left:1rem;
+   }
  }
   .active > a{
     @extend %a-hover;
@@ -95,9 +98,9 @@
     {
       @extend %a-hover;
     }
-    &:focus{
-      color:inherit;
-    }
+    //&:focus{
+    //  color:inherit;
+    //}
   }
 
   .aside-icon {
@@ -142,6 +145,7 @@
     }
 
     a {
+      position:relative;
       //color: $sub-color;
       padding: .5rem 1rem;
       text-align:left;
@@ -154,6 +158,29 @@
       text-indent:1rem;
       font-size:14px;
       font-weight:700;
+    }
+
+    .aside-icon-arrow{
+      top:.5rem;
+      margin-top:4px;
+    }
+
+    &-menu{
+
+      .active {
+        a{
+          color:$brand-primary;
+        }
+      }
+
+      a{
+        background:transparent!important;
+        &:hover{
+          color:$brand-primary;
+        }
+      }
+
+
     }
   }
 }

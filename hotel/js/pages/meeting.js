@@ -40,14 +40,14 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
             return table.find("tbody input[type='checkbox']");
          };
 
-    $("#del-all").click(function(){
+    $("#check-all").click(function(){
         var $this = $(this);
         _findCheckbox().each(function(){
              $(this).prop("checked",$this.prop("checked"));
          });
     });
     //全选删除
-    $("#removeAll").click(function(){
+    $("#del-All").click(function(){
         var selectedList = [];
         _findCheckbox().filter(":checked").each(function(){
             selectedList.push(this.getAttribute("data-id"));

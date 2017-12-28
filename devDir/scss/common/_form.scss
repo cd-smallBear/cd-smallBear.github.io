@@ -1,36 +1,36 @@
-.form-control-feedback {
-  @include text-truncate();
-  min-height: 1.2rem;
-  font-size:.75rem;
-  .error {
-    &:before {
-      @extend %icon-font;
-
-      font-size:16px;
-      vertical-align: -2px;
-      content: '\e906';
-    }
-  }
-
-  &:not(.form-control-static) {
-    margin: {
-      top: .2rem;
-      bottom: .5rem;
-    }
-  }
-
-  &.auto-heg {
-    min-height: inherit;
-  }
-}
-.valid-tooltip .tooltip-inner{
-  max-width: none;
-  background-color: $brand-danger;
-
-  &:before {
-    border-top-color: $brand-danger !important;
-  }
-}
+//.form-control-feedback {
+//  @include text-truncate();
+//  min-height: 1.2rem;
+//  font-size:.75rem;
+//  .error {
+//    &:before {
+//      @extend %icon-font;
+//
+//      font-size:16px;
+//      vertical-align: -2px;
+//      content: '\e906';
+//    }
+//  }
+//
+//  &:not(.form-control-static) {
+//    margin: {
+//      top: .2rem;
+//      bottom: .5rem;
+//    }
+//  }
+//
+//  &.auto-heg {
+//    min-height: inherit;
+//  }
+//}
+//.valid-tooltip .tooltip-inner{
+//  max-width: none;
+//  background-color: $brand-danger;
+//
+//  &:before {
+//    border-top-color: $brand-danger !important;
+//  }
+//}
 
 
 //注册，修改密码，修改邮箱等
@@ -132,12 +132,12 @@
 //   }
 // }
 
-.form-group {
-  &.bg-field, .bg-field {
-    padding: .5rem;
-    background-color: $box-border-gray;
-  }
-}
+//.form-group {
+//  &.bg-field, .bg-field {
+//    padding: .5rem;
+//    background-color: $box-border-gray;
+//  }
+//}
 
 
 @include media-breakpoint-up(sm) {
@@ -184,12 +184,13 @@
   }
 }
 
-
-.col-label{
+.label{
   &-required{
-    &:before{
+    &:after{
       content:"*";
-      margin-right:3px;
+      display:inline-block;
+      line-height:0;
+      margin-left:3px;
       vertical-align:-3px;
       color:$brand-danger;
     }
@@ -204,6 +205,7 @@
     }
   }
 }
+
 
 .input-loading {
   padding-right: 30px;

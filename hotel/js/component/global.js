@@ -2,7 +2,7 @@
  var HotelConfig = window.HotelConfig = {
         root : "/hotel/hotel",
         JsVersion : 1
-     }
+     };
     var Hotel = window.Hotel = {
         // 方法，验证规则
         regex: {
@@ -16,13 +16,6 @@
             http: /^(?:http(?:s|):\/\/|)(?:(?:\w*?)\.|)(?:\w*?)\.(?:\w{2,4})(?:\?.*|\/.*|)$/ig, // 网址格式
             qq: /^[1-9][0-9]{4,10}$/ //QQ验证
         },
-        accountURl: {
-            getRandomCode: "../captcha/getKaptchaImage",
-            checkRandomCode: "../captcha/kaptachaValidate",
-            sendCode: "../phone/send4Psd",
-            checkCode: "../phone/validCode4Psd"
-        },
-        uploadImageTruncate: 58,
         format: function (num, length) {
             var num = num + "",
                 length = length || 4;
@@ -55,32 +48,7 @@
             } else return Cms.formatDouble((number - 0).toFixed(2))
           }else return number
         },
-        convertJson: function (json, acceptName) {
-            var ret = {};
-            if ($.isArray(json)) {
-                $.each(json, function (i, item) {
-                    if ($.isPlainObject(item)) {
-                        for (var key in item) {
-                            ret[acceptName + '[' + i + '].' + key] = encodeURIComponent(item[key]);
-                        }
-                    }
-                });
-            }
-            return ret;
-        },
-        convertJsonNoCode: function (json, acceptName) {
-            var ret = {};
-            if ($.isArray(json)) {
-                $.each(json, function (i, item) {
-                    if ($.isPlainObject(item)) {
-                        for (var key in item) {
-                            ret[acceptName + '[' + i + '].' + key] = item[key];
-                        }
-                    }
-                });
-            }
-            return ret;
-        },
+
         // 弹出loading
         alertLoading: function(tit, hasBg) {
             var $tar, $bg
@@ -151,22 +119,6 @@
             }
             return pwd.join("");
         },
-        // 执行代码
-        domeval: function (code, _doc) {
-            var doc = _doc || document,
-                script = doc.createElement('script')
-
-            script.text = code
-            doc.head.appendChild(script).parentNode.removeChild(script)
-        },
-        // 根据regexp.exec切割字符串
-        strExec: function (str, index, relace) {
-            var _length = str.length
-            return [
-                str.substring(0, index),
-                str.substring(index + _length, _length),
-            ].join('')
-        },
         equal: function (a1, a2) {
             var t1 = Object.prototype.toString.call(a1),
                 t2 = Object.prototype.toString.call(a2)
@@ -219,40 +171,11 @@
                 else fun()
             })
         },
-        // 获取java传递的临时变量
-        getJavaTempData: function () {
-            var _data = window.JavaTempCmsData
-
-            delete window.JavaTempCmsData
-
-            return _data
-        },
-        creatLink: function (href) {
-            var linkDom = $('<link rel="stylesheet" href="' + href + '">'),
-                id = href.split('/').pop()
-
-            $('#' + id).remove()
-            linkDom.attr('id', id)
-            linkDom.appendTo($('head'))
-        },
-        stickup: function (tar, opt) {
-            var option = $.extend({
-                    fixedTop: 0,    // 钉住后的top值
-                }, opt),
-                $stickMenu = tar,
-                $main = option.scroller || $(document),
-                $offsetTop = $stickMenu.position().top
-
-            $main.on('scroll', function (evt) {
-                if ($(evt.target).scrollTop() >= $offsetTop) {
-                    $stickMenu.css({position: 'fixed', top: $main.offset().top + option.fixedTop})
-                } else {
-                    $stickMenu.css('position', 'static')
-                }
-            })
-        },
-        listenerTransEnd: function (tar, callback) {
-            $(tar).one(transntionEndEvent, callback)
+        page : function(){
+            var content = $("#content");
+           if(content.length){
+               return content.data("page");
+           }
         },
         // 帮助实现 transition
         reflow: function () {
@@ -349,6 +272,7 @@
        
            
                 'dropdownSelect': 'component/dropdown.select',
+                'dropdownSelectText': 'component/dropdown.select-text',
                 // 'ngUtil'        : 'component/ng-util',
                 // 'createMap'     : 'component/createMap',
                 // 'fileUploader'  : 'component/webuploader.file',
@@ -369,30 +293,6 @@
             }
         },
 
-        // 设置侧边栏选中
-        setAsideActive: function (app) {
-            var _brds = app.$container.find('.breadcrumb-item'),
-                $menus = $('.aside-menu .menu-item >a'),
-                _txt, _setA
-
-            _txt = (_brds.eq(0).text() == '首页' ? _brds.eq(1) : _brds.eq(0) ).text().trim()
-
-            _setA = $menus.toArray().find(function (el) {
-                return el.textContent.trim() == _txt
-            })
-
-            $menus.removeClass('active')
-            _setA && $(_setA).addClass('active')
-        },
-
-
-        ellipsisStr: function (str, leng, label) {
-            if (typeof str !== 'string') return ''
-
-            return str.length > leng ?
-                str.substr(0, leng) + (label || '...') :
-                str
-        },
         toggle : {
             target : null,
             setTarget : function(ele){
@@ -489,111 +389,6 @@
 
           return ret
       })( navigator.userAgent ),
-      // 节流器
-      throttle: function () {
-        var isClear = arguments[0],
-            fn, param, p
-
-        // 如果第一个参数是boolean, 代表是否清除计时器
-        if( typeof isClear === 'boolean' ) {
-          fn = arguments[1]
-
-          fn.__throttleID && clearTimeout(fn.__throttleID)
-        // 第一个参数为函数
-        }else {
-          fn = isClear
-          param = arguments[1]
-
-          p = $.extend({
-            context: null,    // 作用域
-            args: null,       // 执行时的相关参数(ie下为数组)
-            time: 300,        // 执行函数延迟执行的时间
-          }, param)
-
-          // 清除执行函数计时器句柄
-          Cms.throttle( true, fn)
-
-          fn.__throttleID = setTimeout( function() {
-            fn.apply(p.context, p.args)
-          }, p.time)
-        }
-      },
-        //身份证号合法性验证 支持15位和18位身份证号//支持地址编码、出生日期、校验位验证
-      identityCodeValid: function(code) {
-            if (!code) return "身份证号码不能为空";
-            var city={11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",21:"辽宁",22:"吉林",23:"黑龙江 ",31:"上海",32:"江苏",33:"浙江",34:"安徽",35:"福建",36:"江西",37:"山东",41:"河南",42:"湖北 ",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆",51:"四川",52:"贵州",53:"云南",54:"西藏 ",61:"陕西",62:"甘肃",63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外 "};
-            var tip = "";
-            var pass= true;
-
-            if(!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)){
-                tip = "身份证号格式错误";
-                pass = false;
-            }
-
-            else if(!city[code.substr(0,2)]){
-                //tip = "地址编码错误";
-                tip = "身份证号格式错误";
-                pass = false;
-            }
-            else{
-                //18位身份证需要验证最后一位校验位
-                if(code.length == 18){
-                    code = code.split('');
-                    //∑(ai×Wi)(mod 11)
-                    //加权因子
-                    var factor = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ];
-                    //校验位
-                    var parity = [ 1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2 ];
-                    var sum = 0;
-                    var ai = 0;
-                    var wi = 0;
-                    for (var i = 0; i < 17; i++)
-                    {
-                        ai = code[i];
-                        wi = factor[i];
-                        sum += ai * wi;
-                    }
-                    var last = parity[sum % 11];
-                    if(parity[sum % 11] != code[17]){
-                        //tip = "校验位错误";
-                        tip = "身份证号格式错误";
-                        pass =false;
-                    }
-                }
-            }
-            return pass ? pass : tip;
-        }
     };
 
-
-    // ------兼容es6的方法polyfill
-    if (!Array.prototype.find) {
-        Array.prototype.find = function (predicate) {
-            'use strict'
-            if (this == null) {
-                throw new TypeError('Array.prototype.find called on null or undefined')
-            }
-            if (typeof predicate !== 'function') {
-                throw new TypeError('predicate must be a function')
-            }
-            var list = Object(this)
-            var length = list.length >>> 0
-            var thisArg = arguments[1]
-            var value
-
-            for (var i = 0; i < length; i++) {
-                value = list[i]
-                if (predicate.call(thisArg, value, i, list)) {
-                    return value
-                }
-            }
-            return undefined
-        }
-    }
-
-    if (!String.prototype.trim) {
-        String.prototype.trim = function () {
-            return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
-        }
-    }
 }())

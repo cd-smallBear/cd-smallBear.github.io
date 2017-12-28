@@ -108,6 +108,9 @@ $flexMid: true !default;
 @mixin rotate($degrees...) {
   @include prefixer(transform, rotate($degrees));
 }
+@mixin scale($radix) {
+  @include prefixer(transform, scale($radix));
+}
 @mixin transform-origin($axes) {
   // x-axis - left | center | right  | length | %
   // y-axis - top  | center | bottom | length | %

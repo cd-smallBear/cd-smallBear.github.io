@@ -121,8 +121,8 @@
 			 	 			<td>5</td>
 			 	 			<td>she is my sin</td>
 			 	 			<td>
-			 	 				<a href="{{rootDir}}/member/details.html" class="text-success">查看</a>
-			 	 				<a href="javascript:;" class="text-danger">删除</span>
+			 	 				<a href="{{rootDir}}/member/details.html" class="btn-link">查看</a>
+			 	 				<a href="javascript:;" class="btn-link text-danger">删除</span>
 			 	 			</td>
 			 	 		</tr>
 			 	 		<tr>
@@ -139,8 +139,8 @@
 			 	 			<td>5</td>
 			 	 			<td>she is my sin</td>
 			 	 			<td>
-			 	 				<a href="{{rootDir}}/member/details.html" class="text-success">查看</a>
-			 	 				<a href="javascript:;" class="text-danger">删除</span>
+			 	 				<a href="{{rootDir}}/member/details.html" class="btn-link">查看</a>
+			 	 				<a href="javascript:;" class="btn-link text-danger">删除</span>
 			 	 			</td>
 			 	 		</tr>
 		 	 		</tbody>

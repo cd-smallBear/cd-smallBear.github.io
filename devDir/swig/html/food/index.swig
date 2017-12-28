@@ -87,66 +87,72 @@
 					<table class="table table-head table-hover">
 						<thead>
 							<tr>
-								<td width="300">名称</td>
-								<td width="220">图片</td>
-								<td width="200">价格</td>
-								<td width="200">配置</td>
+								<td width="300">订单号</td>
+								<td width="200">用户名</td>
+								<td width="200">订餐类型</td>
+								<td width="200">订单状态</td>
+								<td width="220">订单总额</td>
+								<td width="200">实际支付</td>
+								<td width="200">支付时间</td>
 								<td>操作</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td class="text-sm-left"><a href="">HSLJD201709081235</a></td>
+								<td>张三</td>
+								<td>散餐</td>
 								<td>
-									<div class="img-wrap">
-										<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=671505305,1685601327&fm=27&gp=0.jpg" class="img-fluid" alt="">
-									</div>
+									<span class="text-success">已支付</span>
+									<span class="text-danger">未支付</span>
+									<span class="text-secondary">已准备</span>
+									<span class="text-subsidiary">已取消</span>
 								</td>
+								<td><span class="price">188.00</span></td>
+								<td><span class="price">188.00</span></td>
+								<td>2017-12-20</td>
 								<td>
-									<span class="price">186</span>
-								</td>
-								<td>婚宴</td>
-								<td>
-									<a href="" class="btn-link">编辑</a>
-									<a href="" class="btn-link text-primary">查看</a>
-									<a href="" class="btn-link text-subsidiary">取消</a>
-									<a href="" class="btn-link text-danger">删除</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="text-sm-left"><a href="">HSLJD201709081235</a></td>
-								<td>
-									<div class="img-wrap">
-										<img src="http://www.sinaimg.cn/dy/slidenews/78_img/2016_21/77017_1801578_995970.jpg" class="img-fluid" alt="">
-									</div>
-								</td>
-								<td>
-									<span class="price">186</span>
-								</td>
-								<td>婚宴</td>
-								<td>
-									<a href="" class="btn-link">编辑</a>
-									<a href="" class="btn-link text-primary">查看</a>
-									<a href="" class="btn-link text-subsidiary">取消</a>
-									<a href="" class="btn-link text-danger">删除</a>
+									<a href="javascript:;" class="btn-link text-success">查看</a>
+									<a href="javascript:;" class="btn-link text-primary">准备</a>
+									<a href="javascript:;" class="btn-link text-subsidiary">取消</a>
 								</td>
 							</tr>
 							<tr>
 								<td class="text-sm-left"><a href="">HSLJD201709081235</a></td>
+								<td>张三</td>
+								<td>散餐</td>
 								<td>
-									<div class="img-wrap">
-										<img src="http://www.sinaimg.cn/dy/slidenews/78_img/2016_21/77017_1801574_545002.jpg" class="img-fluid" alt="">
-									</div>
+									<span class="text-success">已支付</span>
+									<span class="text-danger">未支付</span>
+									<span class="text-secondary">已准备</span>
+									<span class="text-subsidiary">已取消</span>
 								</td>
+								<td><span class="price">188.00</span></td>
+								<td><span class="price">188.00</span></td>
+								<td>2017-12-20</td>
 								<td>
-									<span class="price">186</span>
+									<a href="javascript:;" class="btn-link text-success">查看</a>
+									<a href="javascript:;" class="btn-link text-primary">准备</a>
+									<a href="javascript:;" class="btn-link text-subsidiary">取消</a>
 								</td>
-								<td>婚宴</td>
+							</tr>
+							<tr>
+								<td class="text-sm-left"><a href="">HSLJD201709081235</a></td>
+								<td>张三</td>
+								<td>散餐</td>
 								<td>
-									<a href="" class="btn-link">编辑</a>
-									<a href="" class="btn-link text-primary">查看</a>
-									<a href="" class="btn-link text-subsidiary">取消</a>
-									<a href="" class="btn-link text-danger">删除</a>
+									<span class="text-success">已支付</span>
+									<span class="text-danger">未支付</span>
+									<span class="text-secondary">已准备</span>
+									<span class="text-subsidiary">已取消</span>
+								</td>
+								<td><span class="price">188.00</span></td>
+								<td><span class="price">188.00</span></td>
+								<td>2017-12-20</td>
+								<td>
+									<a href="javascript:;" class="btn-link text-success">查看</a>
+									<a href="javascript:;" class="btn-link text-primary">准备</a>
+									<a href="javascript:;" class="btn-link text-subsidiary">取消</a>
 								</td>
 							</tr>
 						</tbody>

@@ -16,7 +16,7 @@
 {% block content %}
 <div class="g-content">
 	<div class="meeting-panel">
-		<div class="search-box">
+		<div class="search-container">
 			<div class="search" id="search-bar">
 				<div class="search-item">
 					<label for="meetingName" class="search-label">名称</label>

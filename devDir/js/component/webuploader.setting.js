@@ -199,6 +199,15 @@ define(["webuploader","bsDialog"],function(WebUploader,bsDialog){
                     alertError(res.msg);
                     resDelete (uploadOptions,file);
                 }
+
+            }).on('uploadError', function(file, reason) {
+                resDelete (uploadOptions,file);
+                alertError();//reason
+            }).on('uploadComplete', function(file) {
+                $('#' + file.id).find('.file-img-progress').remove();
+                if (!$container) {
+                    uploadOptions.uploadbtn.siblings('.upload-img-wrapper').find('.file-img-progress').remove();
+                }
                 uploadedfile = file;
                 //获取每一个上传实例,供RemoveImage 访问;
                 instanceArray = $.map(instanceArray, function(item, i, arr) {
@@ -208,17 +217,8 @@ define(["webuploader","bsDialog"],function(WebUploader,bsDialog){
                         return item;
                     }
                 });
-            }).on('uploadError', function(file, reason) {
-                resDelete (uploadOptions,file);
-                alertError();//reason
-            }).on('uploadComplete', function(file) {
-                $('#' + file.id).find('.file-img-progress').remove();
-                if (!$container) {
-                    uploadOptions.uploadbtn.siblings('.upload-img-wrapper').find('.file-img-progress').remove();
-                }
             }).on("error", function(error, max, file) {
               if( error == 'F_EXCEED_SIZE' ) {
-                console.log( max )
                 error = '上传的文件大小不能超过' + ~~(max/1024/1024) + 'M'
               }else if( error == 'Q_TYPE_DENIED' ) {
                 error = '请上传' + this.options.accept.map(function(el) {
