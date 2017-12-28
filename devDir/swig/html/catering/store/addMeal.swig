@@ -124,8 +124,9 @@
 						<div class="upload-img-wrapper pb-2 clearfix" id="uploadMenuCateDetailContainer"></div>
 					</div>
 					<textarea name="mark" class="form-control" cols="10" rows="10" placeholder="最多可以输入150个汉字"></textarea>
-					<div class="submit-row pt-1">
+					<div class="submit-row btns pt-1">
 						<input type="submit" class="btn btn-success" value="提交">
+						<button type="button" class="btn btn-outline-success" onclick="history.back();">返回</button>
 					</div>
 				</div>
 			</div>

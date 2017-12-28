@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="search-item">
-				<a href="" class="btn btn-subsidiary">添加菜品</a>
+				<a href="./tag.html" class="btn btn-subsidiary">添加菜品</a>
 			</div>
 		</div>
 	</form>
