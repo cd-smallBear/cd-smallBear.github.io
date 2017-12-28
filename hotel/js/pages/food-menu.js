@@ -21,7 +21,7 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting","dropdownSel
 
     //增加菜单
     var page = Hotel.page();
-    if(/foodMenu|foodMeal/.test(page) ){
+    if(/cateringMenu|cateringMeal/.test(page) ){
         /* 初始logo图片上传 */
         upload({
             uploadbtn : $("#uploadMenuCateImage"),
@@ -37,7 +37,7 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting","dropdownSel
 
         dropdownSelect( $("#dropdown-menuCate") );
 
-        if(page == "foodMeal"){
+        if(page == "cateringMeal"){
             //初始远程加载数据下拉选择
             $("#dropdownText-menuCate").dropdownText({
                 // url : "",

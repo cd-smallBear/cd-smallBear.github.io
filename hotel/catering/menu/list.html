@@ -2,7 +2,7 @@
 <html class="login-page" lang="zh-hans">
 <head>
 	<meta charset="UTF-8">
-	<title>伙特酒店-订单详情</title>
+	<title>伙特酒店-餐饮管理</title>
 
 	
 	<meta name="keywords" content="">
@@ -10,8 +10,8 @@
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
 	
     <link rel="stylesheet" href="/hotel/hotel/css/common.css">
-<link rel="stylesheet" href="/hotel/hotel/css/admin.css">  
-<link rel="stylesheet" href="/hotel/hotel/css/pages/order.css">
+<link rel="stylesheet" href="/hotel/hotel/css/admin.css">
+<link rel="stylesheet" href="/hotel/hotel/css/pages/catering.css">
 
 </head>
 <body >
@@ -57,7 +57,7 @@
     </li>
     
     
-    <li class="menu-item active" >
+    <li class="menu-item" >
       
       
 
@@ -111,7 +111,7 @@
     </li>
     
     
-    <li class="menu-item" >
+    <li class="menu-item active" >
       
       
         
@@ -147,7 +147,7 @@
           </li>
           
           
-          <li >
+          <li  class="active" >
             <a href="javascript:;">菜单管理
               
               <i class="aside-icon-arrow iconfont-arrow-down"></i>
@@ -157,7 +157,7 @@
                
                   <ul class="nav subnav-menu">
                     
-                    <li >
+                    <li  class="active" >
                       <a href="/hotel/hotel/catering/menu/list.html">菜品列表</a>
                     </li>
                     
@@ -304,80 +304,152 @@
 </div>
   
 <div class="g-content">
-	<div class="order-panel">
-		<div class="details">
-			<!-- 订单 -->
-			 <p class="m-caption">
-		 	 		<span>订单信息</span>
-		 	 </p>
-		 	 <div class="data-table mt-0">
-		 	 	<table class="table table-left">
-		 	 		<tr>
-		 	 			<td>订单号：JSHDF201810025355</td>
-		 	 			<td>入住时间：2017/01/01</td>
-		 	 			<td>退房时间: 2017/01/03</td>
-		 	 			<td>入住天数：2</td>
-		 	 			<td>入住方式: 正常入住</td>
-		 	 		</tr>
-		 	 		<tr>
-		 	 			<td colspan="5">备注：she is my sin</td>
-		 	 		</tr>
-		 	 	</table>
-		 	 </div>
-		 	 <!-- 客户 -->
-		 	 <p class="m-caption">
-		 	 		<span>客户信息</span>
-		 	 </p>
-		 	 <div class="data-table mt-0">
-		 	 	<table class="table table-left">
-		 	 		<tr>
-		 	 			<td>客人姓名：张三</td>
-		 	 			<td>手机号码：15108236059</td>
-		 	 			<td>证件号码: 5113231988052059457</td>
-		 	 			<td>实名认证: 是</td>
-		 	 			<td>同来宾客：2</td>
-		 	 		</tr>
-		 	 		<tr>
-		 	 			<td colspan="5">备注：she is my sin</td>
-		 	 		</tr>
-		 	 	</table>
-		 	 </div>
-		 	 <!-- 房间 -->
-		 	 <p class="m-caption">
-		 	 		<span>房间信息</span>
-		 	 </p>
-		 	 <div class="data-table house-info-box">
-		 	 	<table class="table table-bordered table-head">
-		 	 		<thead>
-		 	 			<tr>
-			 	 			<td>房号</td>
-			 	 			<td>房型</td>
-			 	 			<td>同住宾客</td>
-			 	 			<td>门市价格</td>
-			 	 			<td>支付价格</td>
-			 	 			<td>入住状态</td>
-			 	 			<td>结帐状态</td>
-			 	 			<td>操作</td>
-			 	 		</tr>
-		 	 		</thead>
-		 	 		<tbody>
-		 	 			<td>11</td>
-		 	 			<td>豪华标间</td>
-		 	 			<td>朋友</td>
-		 	 			<td>
-		 	 				<span class="price text-subsidiary">198.00</span>
-		 	 			</td>
-		 	 			<td>
-		 	 				<span class="price text-price">120.00</span>
-		 	 			</td>
-		 	 			<td>在住</td>
-		 	 			<td>未结</td>
-		 	 			<td>
-		 	 				<a href="javascript:;" class="btn-link">支付</a>
-		 	 			</td>
-		 	 		</tbody>
-		 	 	</table>
-		 	 </div>
+	<div class="catering-panel">
+		<div class="search-container">
+			<div class="search" id="search-bar">
+				<div class="search-item">
+					<span class="check-option">批量启用</span>
+					<span class="check-option">批量停用</span>
+				</div>
+				<div class="search-item">
+					<a href="./addMenu.html" class="btn btn-subsidiary">+新增菜品</a>
+				</div>
+				<div class="search-item">
+					<a href="./addMeal.html" class="btn btn-subsidiary">+新增套餐</a>
+				</div>
+				<div class="search-item search-input">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="输入要查询的关键字/词">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-primary btn-search"><i class="iconfont-search"></i>查找</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- data table -->
+		<div class="data-table menuList-data" id="menuList-data">
+			<table class="table table-head table-striped table-hover">
+				<thead>
+					<tr>
+						<td width="40">
+							<span class="ui-checkbox">
+								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="check-all">
+								<label for="check-all" class="ui-checkbox-emulation"></label>
+							</span>
+						</td>
+						<td width="300">菜品名称</td>
+						<td>总销量</td>
+						<td>价格</td>
+						<td>总库存</td>
+						<td>点餐开启</td>
+						<td width="220">操作</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<span class="ui-checkbox">
+								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-id1212" data-id="id1212">
+								<label for="del-id1212" class="ui-checkbox-emulation"></label>
+							</span>
+						</td>
+						<td class="text-sm-left">
+							<a href="">
+								<span class="img-wrap">
+									<img src="http://www.028yxx.com/uploads/image/20170508/thumb_20170508143923_3583.jpg" alt="">
+								</span>四川舌尖张三李四
+							</a>
+						</td>
+						<td>2312</td>
+						<td>
+							<span class="price">85.00</span>
+						</td>
+						<td>20</td>
+						<td>
+							<div class="m-switch">
+								<input type="checkbox" class="ui-checkbox-normal switch-check menu-enable" id="switch-id1212" data-id="a121212">
+								<label for="switch-id1212"></label>
+							</div>
+						</td>
+						<td>
+							<a href="" class="btn-link text-success">查看</a>
+							<a href="" class="btn-link text-primary">编辑</a>
+							<a href="javascript:;" class="btn-link text-danger del" data-id="id1212">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="ui-checkbox">
+								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-id1213" data-id="id1213">
+								<label for="del-id1213" class="ui-checkbox-emulation"></label>
+							</span>
+						</td>
+						<td class="text-sm-left">
+							<a href="">
+								<span class="img-wrap">
+									<img src="http://www.028yxx.com/uploads/image/20170508/thumb_20170508143245_0272.jpg" alt="">
+								</span>四川舌尖张三李四
+							</a>
+						</td>
+						<td>2312</td>
+						<td>
+							<span class="price">85.00</span>
+						</td>
+						<td>20</td>
+						<td>
+							<div class="m-switch">
+								<input type="checkbox" class="ui-checkbox-normal switch-check menu-enable" id="switch-id1213" data-id="a121213">
+								<label for="switch-id1213"></label>
+							</div>
+						</td>
+						<td>
+							<a href="" class="btn-link text-success">查看</a>
+							<a href="" class="btn-link text-primary">编辑</a>
+							<a href="javascript:;" class="btn-link text-danger del" data-id="id1213">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="ui-checkbox">
+								<input type="checkbox" name="remove" class="ui-checkbox-normal" id="del-id1214" data-id="id1214">
+								<label for="del-id1214" class="ui-checkbox-emulation"></label>
+							</span>
+						</td>
+						<td class="text-sm-left">
+							<a href="">
+								<span class="img-wrap">
+									<img src="http://www.028yxx.com/uploads/image/20170508/thumb_20170508143524_5843.jpg" alt="">
+								</span>四川舌尖张三李四
+							</a>
+						</td>
+						<td>2312</td>
+						<td>
+							<span class="price">85.00</span>
+						</td>
+						<td>20</td>
+						<td>
+							<div class="m-switch">
+								<input type="checkbox" class="ui-checkbox-normal switch-check menu-enable" id="switch-id1214" data-id="a121214">
+								<label for="switch-id1214"></label>
+							</div>
+						</td>
+						<td>
+							<a href="" class="btn-link text-success">查看</a>
+							<a href="" class="btn-link text-primary">编辑</a>
+							<a href="javascript:;" class="btn-link text-danger del" data-id="id1214">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="m-pagination">
+				<ul class="pagination">
+					<li class="page-pre disabled"><a href="#">‹</a></li>
+					<li class="page-number active"><a href="javascript:;">1</a></li>
+					<li class="page-number"><a href="javascript:;">2</a></li>
+					<li class="page-next"><a href="javascript:;">›</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
@@ -391,7 +463,7 @@
 	<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.5/js/bootstrap.js" ></script>
 	<script src="/hotel/hotel/js/component/global.js" ></script>
 	
-<script src="require.js" data-main="/js/pages/room.js"></script>
+<script src="/hotel/hotel/js/lib/require.js" data-main="/hotel/hotel/js/pages/catering-menu.js"></script>
 
 </body>
 </html>

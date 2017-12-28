@@ -2,7 +2,7 @@
 <html class="login-page" lang="zh-hans">
 <head>
 	<meta charset="UTF-8">
-	<title>伙特酒店-订单详情</title>
+	<title>伙特酒店-餐饮管理</title>
 
 	
 	<meta name="keywords" content="">
@@ -10,8 +10,8 @@
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
 	
     <link rel="stylesheet" href="/hotel/hotel/css/common.css">
-<link rel="stylesheet" href="/hotel/hotel/css/admin.css">  
-<link rel="stylesheet" href="/hotel/hotel/css/pages/order.css">
+<link rel="stylesheet" href="/hotel/hotel/css/admin.css">
+<link rel="stylesheet" href="/hotel/hotel/css/pages/catering.css">
 
 </head>
 <body >
@@ -57,7 +57,7 @@
     </li>
     
     
-    <li class="menu-item active" >
+    <li class="menu-item" >
       
       
 
@@ -111,7 +111,7 @@
     </li>
     
     
-    <li class="menu-item" >
+    <li class="menu-item active" >
       
       
         
@@ -147,7 +147,7 @@
           </li>
           
           
-          <li >
+          <li  class="active" >
             <a href="javascript:;">菜单管理
               
               <i class="aside-icon-arrow iconfont-arrow-down"></i>
@@ -157,7 +157,7 @@
                
                   <ul class="nav subnav-menu">
                     
-                    <li >
+                    <li  class="active" >
                       <a href="/hotel/hotel/catering/menu/list.html">菜品列表</a>
                     </li>
                     
@@ -303,82 +303,104 @@
 
 </div>
   
-<div class="g-content">
-	<div class="order-panel">
-		<div class="details">
-			<!-- 订单 -->
-			 <p class="m-caption">
-		 	 		<span>订单信息</span>
-		 	 </p>
-		 	 <div class="data-table mt-0">
-		 	 	<table class="table table-left">
-		 	 		<tr>
-		 	 			<td>订单号：JSHDF201810025355</td>
-		 	 			<td>入住时间：2017/01/01</td>
-		 	 			<td>退房时间: 2017/01/03</td>
-		 	 			<td>入住天数：2</td>
-		 	 			<td>入住方式: 正常入住</td>
-		 	 		</tr>
-		 	 		<tr>
-		 	 			<td colspan="5">备注：she is my sin</td>
-		 	 		</tr>
-		 	 	</table>
-		 	 </div>
-		 	 <!-- 客户 -->
-		 	 <p class="m-caption">
-		 	 		<span>客户信息</span>
-		 	 </p>
-		 	 <div class="data-table mt-0">
-		 	 	<table class="table table-left">
-		 	 		<tr>
-		 	 			<td>客人姓名：张三</td>
-		 	 			<td>手机号码：15108236059</td>
-		 	 			<td>证件号码: 5113231988052059457</td>
-		 	 			<td>实名认证: 是</td>
-		 	 			<td>同来宾客：2</td>
-		 	 		</tr>
-		 	 		<tr>
-		 	 			<td colspan="5">备注：she is my sin</td>
-		 	 		</tr>
-		 	 	</table>
-		 	 </div>
-		 	 <!-- 房间 -->
-		 	 <p class="m-caption">
-		 	 		<span>房间信息</span>
-		 	 </p>
-		 	 <div class="data-table house-info-box">
-		 	 	<table class="table table-bordered table-head">
-		 	 		<thead>
-		 	 			<tr>
-			 	 			<td>房号</td>
-			 	 			<td>房型</td>
-			 	 			<td>同住宾客</td>
-			 	 			<td>门市价格</td>
-			 	 			<td>支付价格</td>
-			 	 			<td>入住状态</td>
-			 	 			<td>结帐状态</td>
-			 	 			<td>操作</td>
-			 	 		</tr>
-		 	 		</thead>
-		 	 		<tbody>
-		 	 			<td>11</td>
-		 	 			<td>豪华标间</td>
-		 	 			<td>朋友</td>
-		 	 			<td>
-		 	 				<span class="price text-subsidiary">198.00</span>
-		 	 			</td>
-		 	 			<td>
-		 	 				<span class="price text-price">120.00</span>
-		 	 			</td>
-		 	 			<td>在住</td>
-		 	 			<td>未结</td>
-		 	 			<td>
-		 	 				<a href="javascript:;" class="btn-link">支付</a>
-		 	 			</td>
-		 	 		</tbody>
-		 	 	</table>
-		 	 </div>
-		</div>
+<div class="g-content" id="content" data-page="cateringMenu">
+	<div class="catering-panel">
+		<form action="" class="form addmenu-form">
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label label-required">菜品图片</span>
+				<div class="offset-sm-input">
+					<div class="upload-container menuCate-logo clearfix">
+						<div class="upload-img-wrapper" id="uploadMenuCateImageContainer"></div>
+						<label class="btn btn-sm btn-primary upload-btn" id="uploadMenuCateImage" data-name="url">上传图片</label>
+						<strong class="upload-help">建议尺寸 600px * 600px</strong>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label label-required">菜品名称</span>
+				<div class="offset-sm-input">
+					<input type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label">第三方编码</span>
+				<div class="offset-sm-input">
+					<input type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label label-required">库存</span>
+				<div class="offset-sm-input">
+					<input type="text" name="warehouse" class="form-control" value="-1">
+					<span class="text-subsidiary fs12">-1 表示库存无上限</span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label label-required">销售价</span>
+				<div class="offset-sm-input radio-options">
+					<span class="radio-option">
+						<span class="ui-radio">
+							<input type="radio" name="rule" class="ui-radio-normal" id="price-id1212" checked>
+							<label for="price-id1212" class="ui-radio-emulation"></label>
+						</span>
+						<label for="price-id1212" class="ui-label">单一售价</label>
+					</span>
+					<span class="radio-option">
+						<span class="ui-radio">
+							<input type="radio" name="rule" class="ui-radio-normal" id="price-id1213">
+							<label for="price-id1213" class="ui-radio-emulation"></label>
+						</span>
+						<label for="price-id1213" class="ui-label">启用规格</label>
+					</span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label">菜品口味</span>
+				<div class="offset-sm-input">
+					<div class="m-switch">
+						<input type="checkbox" class="ui-checkbox-normal switch-check menu-enable" id="menu-taste">
+						<label for="menu-taste"></label>
+					</div>
+					<span class="menu-taste-label form-control-static">口味请设置</span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label">菜品分组</span>
+				<div class="offset-sm-input">
+					<div class="m-select" id="dropdown-menuCate">
+						<input type="text" class="form-control select-txt" value="请选择" readonly data-toggle="dropdown" data-name="menu-category">
+						<input type="hidden" name="menu-category">
+						<span class="select-caret"></span>
+						<div class="dropdown-menu">
+							<a href="javascript:;" class="dropdown-item" data-value="0">全部</a>
+							<a href="javascript:;" class="dropdown-item" data-value="1">菜品一</a>
+							<a href="javascript:;" class="dropdown-item" data-value="2">菜品二</a>
+							<a href="javascript:;" class="dropdown-item" data-value="3">菜品三</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label">菜品标签</span>
+				<div class="offset-sm-input">
+					<button type="button" class="btn btn-subsidiary">+增加标签</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<span class="offset-sm-label col-form-label">商品信息</span>
+				<div class="offset-sm-input">
+					<div class="upload-container">
+						<label class="btn btn-sm btn-primary upload-btn" id="uploadMenuCateDetail" data-name="sUrl">上传图片</label>
+						<strong class="upload-help">建议尺寸 800px * 450px (最多可上传5张)</strong>
+						<div class="upload-img-wrapper pb-2 clearfix" id="uploadMenuCateDetailContainer"></div>
+					</div>
+					<textarea name="mark" class="form-control" cols="10" rows="10" placeholder="最多可以输入150个汉字"></textarea>
+					<div class="submit-row pt-1">
+						<input type="submit" class="btn btn-success" value="提交">
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -391,7 +413,7 @@
 	<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.5/js/bootstrap.js" ></script>
 	<script src="/hotel/hotel/js/component/global.js" ></script>
 	
-<script src="require.js" data-main="/js/pages/room.js"></script>
+<script src="/hotel/hotel/js/lib/require.js" data-main="/hotel/hotel/js/pages/catering-menu.js"></script>
 
 </body>
 </html>

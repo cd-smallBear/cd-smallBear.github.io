@@ -11,7 +11,7 @@
   '营销中心': { icon: 'sale', 'url': '/sale',  children: {
 
   } },
-  '餐饮管理': { icon: 'catering', 'url': '/food', children: {
+  '餐饮管理': { icon: 'catering', 'url': '/catering', children: {
     "订单管理" : "/index.html",
     "菜单管理" : "/menu",
     "菜品仓库" : "/store",
