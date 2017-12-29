@@ -1,26 +1,23 @@
-@import "var",
-        "bootstrap/variables",
-        "bootstrap/mixins",
-        "mixins",
+@import "include",
 
+        "common/price",
+        "common/search",
+        "common/text",
+        "common/table",
+        "common/btn",
 
-        "common/placeholder",
         "component/asideMenu",
         // "component/modal",
-        "component/select",
         "component/caption",
         "component/pagination",
         "component/rangeDate",
         "component/uploadImgs",
         "component/switch",
+        "component/select",
         "component/dropdownTextSelector",
 
 
-        "common/price",
-        "common/text",
-        "common/table",
-        "common/search",
-        "common/btn",
+
 
         "admin/global";
         //"admin/pages";

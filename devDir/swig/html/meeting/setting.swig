@@ -78,7 +78,7 @@
 			</div>
 		</div>
 		<div class="data-operate btns mb-2">
-			<button type="button" class="btn btn-subsidiary" id="add-meeting">+增加配置</button>
+			<button type="button" class="btn btn-subsidiary" id="add-setting">+增加配置</button>
 			<button type="button" class="btn btn-danger" id="del-All">删除</button>
 		</div>
 		<!-- data table -->

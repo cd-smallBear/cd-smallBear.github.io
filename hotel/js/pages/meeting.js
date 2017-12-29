@@ -3,10 +3,23 @@ require.config(Hotel.requireConfig);
 define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(ajaxSub,dropdownSelect,dialog,upload){
   //会议室管理
     dropdownSelect($("#search-bar"));
+  //添加会议室
+    upload({
+        uploadbtn : $("#uploadRoomImage"),
+        imgswrap  : $("#uploadRoomImageContainer"),
+        fileNumLimit : 3
+    });
+    if(window.UE){
+        var ue = UE.getEditor('ueditor');
 
+    }
+    var form = $("#addRoom-form").find("[type=submit]").click(function(e){
+        dialog.alert("提示","编辑器中的内容为 <br/>" + ue.getContentTxt("121212"));
+        return false;
+    });
   //配置管理
-    $("#add-meeting").click(function(){
-        dialog.ajaxPage("添加会议室",HotelConfig.root + "/forms/dialog-addSetting.html",function($element,dialog){
+    $("#add-setting").click(function(){
+        dialog.ajaxPage("添加配置",HotelConfig.root + "/forms/dialog-addSetting.html",function($element,dialog){
             //初始图片上传
             //tips  uploadbtn 的 data-name 属性是上传域的 name 值
             upload({
@@ -127,7 +140,7 @@ define(["ajaxSub","dropdownSelect","bsDialog","webuploader.setting"],function(aj
     });
     //编辑
     table.on("click",".edit",function(){
-        dialog.ajaxPage("添加会议室",HotelConfig.root + "/forms/dialog-addSetting.html?id=id12",function($element,dialog){
+        dialog.ajaxPage("编辑配置",HotelConfig.root + "/forms/dialog-addSetting.html?id=id12",function($element,dialog){
             //初始图片上传
             //tips  uploadbtn 的 data-name 属性是上传域的 name 值
             upload({

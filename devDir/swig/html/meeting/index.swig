@@ -75,7 +75,7 @@
 			<!-- search -->
 			<div class="search btns">
 			   <button type="button" class="btn btn-primary btn-search"><i class="iconfont-search"></i>搜索</button>
-			   <button type="button" class="btn btn-subsidiary" id="add-room">+会议室</button>
+			   <a href="./addRoom.html" class="btn btn-subsidiary">+会议室</a>
 			</div>
 		</div>
 		<!-- data table -->

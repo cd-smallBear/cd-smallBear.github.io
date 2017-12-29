@@ -1,0 +1,8 @@
+@mixin generatorColumn(){
+  $columns:12;
+  @for $i from 1 through $columns{
+    .col-mdc-#{$i}{
+      width:percentage( $i / $columns );
+    }
+  }
+}

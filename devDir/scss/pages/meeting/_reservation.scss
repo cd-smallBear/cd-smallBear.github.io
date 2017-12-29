@@ -1,0 +1,145 @@
+@charset "UTF-8";
+.meeting-panel{
+
+}
+
+.reservation-box{
+  $enableColor : #216fad;
+  $disableColor :#23ac38;
+  .enable-badge,.disable-badge{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin-right:5px;
+    vertical-align:top;
+    font-size:0;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+
+  .enable-badge{
+    background:$enableColor;
+  }
+
+  .disable-badge{
+    background:$disableColor;
+  }
+
+
+  .reservation-head{
+    line-height:30px;
+    padding:0 1rem;
+    text-align:center;
+    color:#fff;
+    background:$gray-lighter;
+  }
+
+  .reservation-body{
+    margin-top:-.5rem;
+    padding-bottom:1rem;
+    background:#fff;
+  }
+}
+
+.reservation-head{
+  .reservation-status{
+    float:right;
+
+    >span{
+      display:inline-block;
+      line-height:20px;
+      margin-left:1rem;
+    }
+
+  }
+
+  .choice-date{
+    float:left;
+
+    a{
+      display:inline-block;
+      width:20px;
+      line-height:20px;
+      margin-right:.5em;
+      @include border-radius(50%);
+      font-weight:700;
+      background:#fff;
+    }
+
+    i{
+      margin-right:0;
+    }
+  }
+}
+
+.reservation-body{
+
+   & + .reservation-head{
+     margin-top : 2rem;
+   }
+  .tbody{
+    .enable-badge,.disable-badge{
+      width:30px;
+      height:30px;
+      margin-left:1.2rem;
+    }
+  }
+}
+.carousel-box{
+  .prev-arrow,.next-arrow{
+    display:inline-block;
+    margin-left:.5rem;
+    vertical-align: top;
+    cursor :pointer;
+  }
+  .prev-arrow{
+    @include triangle(left,10px ,$gray-lighter);
+  }
+  .next-arrow{
+    @include triangle(right,10px ,$gray-lighter);
+  }
+
+  table{
+    border-collapse: separate;
+    border-spacing:0 .5rem;
+  }
+  thead > tr{
+    background:#fcffa8;
+  }
+  tbody > tr{
+    background:#fefae1;
+  }
+  .carousel-gallery {
+    overflow: hidden;
+  }
+}
+.carousel-gallery{
+    .carousel-inner{
+      //line-height:0;
+      //text-align:justify;
+      white-space: nowrap;
+      //&:after{
+      //  content:"";
+      //  display:inline-block;
+      //  width:100%;
+      //}
+      //@include clearfix;
+    }
+
+   .carousel-item{
+     //float:left;
+     display:inline-block;
+     width:10%;
+     //margin-top:7px;
+     vertical-align:top;
+     cursor:pointer;
+   }
+
+}
+.order-box{
+   table{
+     margin:0 .5rem;
+     border-collapse:separate;
+     border-spacing: 0 .6rem;
+   }
+}

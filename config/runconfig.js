@@ -20,7 +20,7 @@ var fs = require('fs'),
 module.exports = ( devPath, buildPath, distPath )=> {
   // server option
   var serverOptions = require( './serverOptions' )(buildPath),
-      {getPath, deleteFolderRecursive} = utils( devPath, buildPath )
+      {getPath, deleteFolderRecursive,test} = utils( devPath, buildPath )
 
   // -----编译任务
   /**
@@ -74,7 +74,7 @@ module.exports = ( devPath, buildPath, distPath )=> {
    * @return {gulp.stream}       gulp数据流
    */
   function gulpJs( src ) {
-    var pathOb = getPath( src, buildPath + '/js', devPath + '/js/**/*.js' )
+    var pathOb = getPath( src, buildPath + '/js', devPath + '/js/**/*' )
 
     return gulp.src( pathOb.src )
       .pipe( gulp.dest( pathOb.build ) )
@@ -165,25 +165,11 @@ module.exports = ( devPath, buildPath, distPath )=> {
 
     gulp.task("smallbear",function(){
 
-            browserSync.init( {
-                // proxy:"http://192.168.2.200:9000/",
-                server: {
-                    baseDir: buildPath,
-                    index: "/login/login.html"
-                },
-                port:999,
-                // online:false,
-                // open: "external",
-                open:"tunnel",
-                notify: false,
-                logPrefix: "smallBear",
-                logLevel: "info",
-                tunnel:"smallbear",
-                ghostMode: {
-                    clicks: false,
-                    forms: false,
-                    scroll: false
-                }
-            } )
+        console.log(    test("./b/c","./b/c/e/a.js"))
+    })
+    gulp.task("smallbear2",function(){
+
+        gulp.src("config/*.js")
+            .pipe(gulp.dest("bbb"))
     })
 }

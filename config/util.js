@@ -66,9 +66,12 @@ module.exports = ( devPath, buildPath )=> {
     if( _match[0] ) return _match[0]
     else return str
   }
-
+ function test(src,dest){
+      return path.dirname( path.relative(src,dest) ) ;
+ }
   return {
     deleteFolderRecursive,
     getPath,
+      test
   }
 }

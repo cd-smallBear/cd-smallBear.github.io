@@ -86,7 +86,7 @@
     _opt = $.extend( {
       title : tit || '操作提示',
       msg   : msg,
-      type  : BootstrapDialog.TYPE_SUCCESS,
+      type  : type || BootstrapDialog.TYPE_SUCCESS,
       timeout: 1500,
       classes: 'bootstrap-alert'
     }, _opt||{} );

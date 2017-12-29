@@ -40,15 +40,15 @@
 			</div>
 			<div class="form-group row">
 				<span class="offset-sm-label col-form-label label-required">销售价</span>
-				<div class="offset-sm-input radio-options" id="radio-opotions-box">
-					<span class="radio-option">
+				<div class="offset-sm-input ui-options" id="radio-opotions-box">
+					<span class="option">
 						<span class="ui-radio">
 							<input type="radio" name="rule" class="ui-radio-normal radio" id="closeRule" checked data-active="close" data-target="openRuleBox">
 							<label for="closeRule" class="ui-radio-emulation"></label>
 						</span>
 						<label for="closeRule" class="ui-label">单一售价</label>
 					</span>
-					<span class="radio-option">
+					<span class="ption">
 						<span class="ui-radio">
 							<input type="radio" name="rule" class="ui-radio-normal radio" id="openRule" data-active="open" data-target="openRuleBox">
 							<label for="openRule" class="ui-radio-emulation"></label>

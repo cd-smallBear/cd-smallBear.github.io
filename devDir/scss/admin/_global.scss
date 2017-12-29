@@ -10,10 +10,15 @@ html,body,.g-main{
   background:$box-border-gray;
 }
 
-//宽[
+//宽
 .w100{
-  width:100px;
+  @extend %width100;
+}
+.w200{
+  @extend %width200;
 }
 .fs12{
   font-size:12px;
 }
+
+

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .meeting-panel{
+
   .search-container{
     margin-bottom:2rem;
     padding:1rem 1rem .5rem 1rem;
@@ -9,5 +10,28 @@
     .search-item{
       margin-right:2rem;
     } 
+  }
+
+
+  //添加会议室
+  .addRoom-form{
+    padding:1rem;
+    background:#fff;
+
+    .ui-options{
+      line-height: 35px;
+    }
+  }
+  .ueditor{
+    width:800px;
+    min-height:300px;
+  }
+}
+
+@include media(){
+  @include generatorColumn();
+  .mdc-mb2{
+    margin-bottom:2rem;
+    padding-top:1rem;
   }
 }

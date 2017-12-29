@@ -80,3 +80,25 @@
   vertical-align:-3px;
   background:url("#{$images-path}icons.png") no-repeat;
 }
+
+@mixin width200($extend :true){
+  @if $extend {
+  @extend %width200;
+  }@else{
+    width:200px;
+  }
+}
+@mixin width100($extend :true){
+  @if $extend {
+    @extend %width100;
+  }@else{
+    width:100px;
+  }
+}
+%width200{
+  @include width200($extend:false);
+}
+
+%width100{
+  @include width100($extend:false);
+}
